@@ -1,0 +1,13 @@
+$background-color: pink;
+
+#header {
+  background-color: $background-color;
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+}
+
+#header-links {
+  align-self: flex-end;
+  flex: 1;
+}
