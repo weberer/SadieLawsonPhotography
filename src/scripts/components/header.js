@@ -1,6 +1,23 @@
 import '../../css/header.scss';
+import M from 'materialize-css';
 
-const navButton = (text, page) => `<li><a href="${page}" class="waves-effect waves-light btn-flat">${text}</a></li>`;
+const _PAGES = [
+    {name: 'Prices', href: 'prices.html'},
+    {name: 'Contact', href: 'contact.html'},
+    {name: 'About', href: 'about.html'},
+    {name: 'Home', href: 'index.html'}
+];
+
+const _navButton = (text, page) => `<li><a href="${page}" class="waves-effect waves-light btn-flat primary-dark">${text}</a></li>`;
+
+const _buildNavButtons = () => _PAGES.map(page =>_navButton(page.name, page.href)).reduce((accumulator, page) => accumulator + page, '');
+
+const _initSideNav = () => {
+    document.addEventListener('DOMContentLoaded', function() {
+        const elems = document.querySelectorAll('.sidenav');
+        const instances = M.Sidenav.init(elems, {});
+    });
+}
 
 const headerElement = `<nav class="navbar-fixed white">
     <div class="nav-wrapper">
@@ -8,23 +25,24 @@ const headerElement = `<nav class="navbar-fixed white">
             <div class="container">
                 <img id="logo" class="brand-logo left" src="../resources/logo1.jpg" alt="Sadie Lawson Photography">
                 <div class="button-container right">
-                    <button class="btn-flat hide-on-large-only waves-effect waves-light"><i class="medium material-icons menu-icon">menu</i></button>
+                    <a  href="#" data-target="mobile-slider" class="sidenav-trigger"><i class="medium material-icons menu-icon primary-dark">menu</i></a>
                 </div>
                 <ul class="right hide-on-med-and-down">
-                  ${navButton('Prices', 'prices.html')}
-                  ${navButton('Contact', 'contact.html')}
-                  ${navButton('About', 'about.html')}
-                  ${navButton('Home', 'index.html')}
+                    ${_buildNavButtons()}
                 </ul>
             </div>
         </div>
     </div>
-</nav>`;
+</nav>
+<ul id="mobile-slider" class="sidenav">
+    ${_buildNavButtons()}
+</ul>`;
 
-const attachHeaderToDocument = () => {
+const _attachHeaderToDocument = () => {
     const headerElementId = 'slp-header';
     const headerDiv = document.getElementById(headerElementId);
     headerDiv.innerHTML = headerElement;
 }
 
-attachHeaderToDocument();
+_attachHeaderToDocument();
+_initSideNav();

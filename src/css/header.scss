@@ -1,10 +1,5 @@
 @import 'materialize.config';
 
-.menu-icon {
-  color: $primary-color;
-  cursor: pointer;
-}
-
 nav {
   background-color: white;
 
@@ -16,22 +11,17 @@ nav {
       }
     }
 
-    a, i {
-      color: $primary-color-dark;
-    }
-  }
-
-  .nav-content {
-    height: inherit;
-
-    .container {
+    .nav-content {
       height: inherit;
 
-      img {
+      .container {
         height: inherit;
-        position: relative;
+
+        img {
+          height: inherit;
+          position: relative;
+        }
       }
     }
   }
-
 }
