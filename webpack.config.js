@@ -14,10 +14,10 @@ module.exports = {
 
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
-        index: './src/index.js',
-        about: './src/about.js',
-        contacts: './src/contacts.js',
-        'materialize-loader': './path/to/materialize.config.js'
+        index: './src/scripts/main.js',
+        prices: './src/scripts/prices.js',
+        contacts: './src/scripts/contacts.js',
+        about: './src/scripts/about.js'
     },
 
     // how to write the compiled files to disk
@@ -55,7 +55,7 @@ module.exports = {
                 loader: 'url-loader?limit=10000&mimetype=application/font-woff'
             },
             {
-                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(png|jpg|jpeg|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'file-loader'
             }
         ]
@@ -84,6 +84,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css",
             chunkFilename: "[id].[contenthash].css"
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/about.html',
+            inject: 'body',
+            chunks: ['about'],
+            filename: 'about.html'
         })
     ],
 

@@ -19,7 +19,7 @@ phases:
 # Include only the files required for your application to run.
 artifacts:
   files:
-    - index.js
+    - main.js
     - dist/**/*
     - request-map.js
     - credentials.json

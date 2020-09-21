@@ -1,13 +1,37 @@
-$background-color: pink;
+@import 'materialize.config';
 
-#header {
-  background-color: $background-color;
-  display: flex;
-  flex-direction: row;
-  height: 20%;
+.menu-icon {
+  color: $primary-color;
+  cursor: pointer;
 }
 
-#header-links {
-  align-self: flex-end;
-  flex: 1;
+nav {
+  background-color: white;
+
+  .nav-wrapper {
+    button {
+      i {
+        height: inherit;
+        line-height: inherit;
+      }
+    }
+
+    a, i {
+      color: $primary-color-dark;
+    }
+  }
+
+  .nav-content {
+    height: inherit;
+
+    .container {
+      height: inherit;
+
+      img {
+        height: inherit;
+        position: relative;
+      }
+    }
+  }
+
 }

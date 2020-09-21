@@ -6,7 +6,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.dev.js"
+    "clean": "rimraf dist",
+    "serve:webpack": "webpack --config webpack.dev.js --mode development --watch",
+    "serve:eleventy": "set \"ELEVENTY_ENV=development eleventy --serve\"",
+    "serve": "npm-run-all clean --parallel serve:*",
+    "build:webpack": "webpack --config webpack.config.js --mode production",
+    "build:eleventy": "set ELEVENTY_ENV=\"production eleventy\"",
+    "build": "run-s clean build:*"
   },
   "repository": {
     "type": "git",
@@ -22,6 +28,7 @@
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "babel-loader": "^8.1.0",
@@ -32,7 +39,9 @@
     "html-webpack-plugin": "^4.4.1",
     "materialize-loader": "^3.0.1",
     "mini-css-extract-plugin": "^0.11.2",
+    "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
