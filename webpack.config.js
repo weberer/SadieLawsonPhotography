@@ -120,6 +120,10 @@ module.exports = {
                 footerTemplate: '#slp-footer'
             },
         }),
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css",
+            chunkFilename: "[id].[contenthash].css"
+        })
     ],
 
     // https://webpack.js.org/configuration/optimization/
