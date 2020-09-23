@@ -1,7 +1,8 @@
 @import '~materialize-css/sass/components/_color-variables';
 //@import '~materialize-css/sass/components/variables';
 
-$primary-color: #f8dedf;
+//$primary-color: #f8dedf;
+$primary-color: #feedea;
 $primary-color-light: lighten($primary-color, 15%);
 $primary-color-dark: darken($primary-color, 20%);
 $primary-color-dark-2: darken($primary-color, 30%);

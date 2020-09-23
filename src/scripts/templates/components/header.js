@@ -16,7 +16,7 @@ const headerHTML = `<nav class="navbar-fixed white">
     <div class="nav-wrapper">
         <div class="nav-content">
             <div class="container">
-                <img id="logo" class="brand-logo left" src="../resources/logo1.jpg" alt="Sadie Lawson Photography">
+                <img id="logo" class="brand-logo left" src="../resources/logo.png" alt="Sadie Lawson Photography">
                 <div class="button-container right">
                     <a  href="#" data-target="mobile-slider" class="sidenav-trigger"><i class="medium material-icons menu-icon primary-dark">menu</i></a>
                 </div>
