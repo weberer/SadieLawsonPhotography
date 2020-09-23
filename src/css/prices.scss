@@ -1,5 +1,6 @@
 @import 'materialize.config';
 
+// Price table
 th {
   text-transform: uppercase;
   color: map-get($grey, "lighten-1");
@@ -29,4 +30,20 @@ tr {
 
 table {
   margin-top: 5vh;
+}
+
+// Price Cards
+
+.card-image {
+  .card-title {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+.card-content {
+  .card-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+  }
 }

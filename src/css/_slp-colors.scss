@@ -1,0 +1,52 @@
+//$primary-color: #f8dedf;
+$primary-color: #feedea;
+$primary-color-light: lighten($primary-color, 15%);
+$primary-color-dark: darken($primary-color, 20%);
+$primary-color-dark-2: darken($primary-color, 30%);
+$primary-color-dark-3: darken($primary-color, 40%);
+
+$secondary-color: #ffdc9f;
+$secondary-color-light: lighten($secondary-color, 20%);
+$secondary-color-dark: darken($secondary-color, 15%);
+
+$charcoal: #36454f;
+
+.primary {
+  background-color: $primary-color !important;
+}
+
+.primary-dark {
+  background-color: $primary-color-dark !important;
+}
+
+.primary-text {
+  color: $primary-color !important;
+}
+
+.primary-text-dark {
+  color: $primary-color-dark !important;;
+}
+
+.secondary {
+  background-color: $secondary-color !important;;
+}
+
+.secondary-dark {
+  background-color: $secondary-color-dark !important;
+}
+
+.secondary-text {
+  color: $secondary-color !important;
+}
+
+.secondary-text-dark {
+  color: $secondary-color-dark !important;
+}
+
+.charcoal {
+  background-color: $charcoal !important;
+}
+
+.charcoal-text {
+  color: $charcoal !important;
+}
