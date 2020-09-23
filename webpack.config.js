@@ -2,6 +2,7 @@ const path = require('path');
 const buildPath = path.resolve(__dirname, 'dist');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPrerenderPlugin = require('html-webpack-prerender-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin')
@@ -14,10 +15,16 @@ module.exports = {
 
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
-        index: './src/scripts/index.js',
+        main: './src/scripts/main.js',
         prices: './src/scripts/prices.js',
         contact: './src/scripts/contact.js',
-        about: './src/scripts/about.js'
+        about: './src/scripts/about.js',
+        indexTemplate: './src/scripts/templates/index.js',
+        pricesTemplate: './src/scripts/templates/prices.js',
+        contactTemplate: './src/scripts/templates/contact.js',
+        aboutTemplate: './src/scripts/templates/about.js',
+        headerTemplate: './src/scripts/templates/components/header.js',
+        footerTemplate: './src/scripts/templates/components/footer.js',
     },
 
     // how to write the compiled files to disk
@@ -65,32 +72,54 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
-            inject: 'body',
-            chunks: ['index'],
+            inject: 'head',
+            excludeChunks: ['indexTemplate'],
+            chunks:  ['main'],
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/prices.html',
-            inject: 'body',
-            chunks: ['prices'],
+            inject: 'head',
+            excludeChunks: ['pricesTemplate'],
+            chunks: ['main', 'prices'],
             filename: 'prices.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/contact.html',
-            inject: 'body',
-            chunks: ['contact'],
+            inject: 'head',
+            excludeChunks: ['contactTemplate'],
+            chunks: ['main', 'contact'],
             filename: 'contact.html'
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-            chunkFilename: "[id].[contenthash].css"
         }),
         new HtmlWebpackPlugin({
             template: './src/html/about.html',
-            inject: 'body',
-            chunks: ['about'],
+            inject: 'head',
+            excludeChunks: ['aboutTemplate'],
+            chunks: ['main', 'about'],
             filename: 'about.html'
-        })
+        }),
+        new HtmlWebpackPrerenderPlugin({
+            'index.html': {
+                indexTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'prices.html': {
+                pricesTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'contact.html': {
+                contactTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'about.html': {
+                aboutTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+        }),
     ],
 
     // https://webpack.js.org/configuration/optimization/

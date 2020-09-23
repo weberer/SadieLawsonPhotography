@@ -61,28 +61,28 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
-            inject: 'body',
+            inject: 'head',
             excludeChunks: ['indexTemplate'],
             chunks:  ['main'],
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/prices.html',
-            inject: 'body',
+            inject: 'head',
             excludeChunks: ['pricesTemplate'],
             chunks: ['main', 'prices'],
             filename: 'prices.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/contact.html',
-            inject: 'body',
+            inject: 'head',
             excludeChunks: ['contactTemplate'],
             chunks: ['main', 'contact'],
             filename: 'contact.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/about.html',
-            inject: 'body',
+            inject: 'head',
             excludeChunks: ['aboutTemplate'],
             chunks: ['main', 'about'],
             filename: 'about.html'
