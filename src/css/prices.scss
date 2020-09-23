@@ -1,0 +1,32 @@
+@import 'materialize.config';
+
+th {
+  text-transform: uppercase;
+  color: map-get($grey, "lighten-1");
+}
+
+td {
+  &:first-child {
+    text-transform: uppercase;
+  }
+}
+
+td, th {
+  &:first-child {
+    text-align: right;
+    border-right: solid $primary-color 4px;
+    padding-right: 20px;
+
+    & + td, & + th {
+      padding-left: 20px;
+    }
+  }
+}
+
+tr {
+  border-bottom: none!important;
+}
+
+table {
+  margin-top: 5vh;
+}

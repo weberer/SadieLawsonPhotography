@@ -2,22 +2,27 @@ const path = require('path');
 const buildPath = path.resolve(__dirname, 'dist');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-//const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-//const TerserPlugin = require('terser-webpack-plugin')
+const HtmlWebpackPrerenderPlugin = require('html-webpack-prerender-plugin');
 
 module.exports = {
     entry: {
-        index: './src/scripts/main.js',
+        main: './src/scripts/main.js',
         prices: './src/scripts/prices.js',
         contact: './src/scripts/contact.js',
-        about: './src/scripts/about.js'
+        about: './src/scripts/about.js',
+        indexTemplate: './src/scripts/templates/index.js',
+        pricesTemplate: './src/scripts/templates/prices.js',
+        contactTemplate: './src/scripts/templates/contact.js',
+        aboutTemplate: './src/scripts/templates/about.js',
+        headerTemplate: './src/scripts/templates/components/header.js',
+        footerTemplate: './src/scripts/templates/components/footer.js',
     },
     mode: 'development',
     devtool: 'inline-source-map',
     output: {
         filename: '[name].[hash:20].js',
-        path: buildPath
+        path: buildPath,
+        libraryTarget: 'umd',
     },
     module: {
         rules: [
@@ -39,7 +44,6 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env']
-                        //plugins:['@babel/plugin-proposal-object-rest-spread']
                     }
                 }
             },
@@ -58,26 +62,52 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'body',
-            chunks: ['index'],
+            excludeChunks: ['indexTemplate'],
+            chunks:  ['main'],
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/prices.html',
             inject: 'body',
-            chunks: ['prices'],
+            excludeChunks: ['pricesTemplate'],
+            chunks: ['main', 'prices'],
             filename: 'prices.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/contact.html',
             inject: 'body',
-            chunks: ['contact'],
+            excludeChunks: ['contactTemplate'],
+            chunks: ['main', 'contact'],
             filename: 'contact.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/about.html',
             inject: 'body',
-            chunks: ['about'],
+            excludeChunks: ['aboutTemplate'],
+            chunks: ['main', 'about'],
             filename: 'about.html'
-        })
-    ],
+        }),
+        new HtmlWebpackPrerenderPlugin({
+            'index.html': {
+                indexTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'prices.html': {
+                pricesTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'contact.html': {
+                contactTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'about.html': {
+                aboutTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+        }),
+    ]
 };

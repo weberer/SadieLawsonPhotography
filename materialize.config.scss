@@ -1,6 +1,11 @@
+@import '~materialize-css/sass/components/_color-variables';
+//@import '~materialize-css/sass/components/variables';
+
 $primary-color: #f8dedf;
 $primary-color-light: lighten($primary-color, 15%);
 $primary-color-dark: darken($primary-color, 20%);
+$primary-color-dark-2: darken($primary-color, 30%);
+$primary-color-dark-3: darken($primary-color, 40%);
 
 .primary {
   color: $primary-color!important;
@@ -8,4 +13,9 @@ $primary-color-dark: darken($primary-color, 20%);
 
 .primary-dark {
   color: $primary-color-dark!important;
+}
+
+.btn, .btn-large, .btn-small {
+  background-color: $primary-color!important;
+  color: $primary-color-dark-3!important;
 }
