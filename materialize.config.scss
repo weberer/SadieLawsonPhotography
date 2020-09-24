@@ -5,3 +5,9 @@
   background-color: $primary-color !important;
   color: $primary-color-dark-3 !important;
 }
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 85% !important;
+  }
+}

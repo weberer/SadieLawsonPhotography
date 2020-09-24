@@ -16,6 +16,7 @@ module.exports = {
         aboutTemplate: './src/scripts/templates/about.js',
         headerTemplate: './src/scripts/templates/components/header.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
+        pricesCardTemplate: './src/scripts/templates/prices_cards.js'
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -95,6 +96,7 @@ module.exports = {
             },
             'prices.html': {
                 pricesTemplate: '#slp-main',
+                pricesCardTemplate: '#slp-main-cards',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
