@@ -20,8 +20,7 @@ const _buildCard = data => {
                 <span class="card-subtitle">Starting at $${data.price}</span>
                 <p>${data.subtitle}</p><br>
                 <p>${data.description}</p>
-            </div>
-        </div>
+            </div>        </div>
     </div>`;
 }
 

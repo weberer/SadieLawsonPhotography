@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     name: "Wedding Session",
     subtitle: "You get hitched, I get rich",
     price: 2000,
@@ -14,6 +15,7 @@ export default [
     largeOffset: "2"
   },
   {
+    id: 2,
     name: "Engagement Session",
     subtitle: "Pics of you and bae",
     price: 100,
@@ -27,6 +29,7 @@ export default [
     largeOffset: ""
   },
   {
+    id: 3,
     name: "Winter-Minis",
     subtitle: "Freazin-For-No-Reason",
     price: 20,
@@ -35,6 +38,7 @@ export default [
     largeWidth: "8"
   },
   {
+    id: 4,
     name: "Maternity Session",
     subtitle: "Because even a whale can look sexy...",
     price: 3.1415,
@@ -42,7 +46,7 @@ export default [
     image: "../resources/photos/maternity/maternity.jpg",
     mediumWidth: "7"
   },
-  {
+  { id: 5,
     name: "Newborn Session",
     subtitle: "I've had poops bigger than that!",
     price: "100 per lb of newborn",
@@ -51,6 +55,7 @@ export default [
     mediumWidth: "5"
   },
   {
+    id: 6,
     name: "BDSM-Special",
     subtitle: "Clothes optional, sexy not",
     price: 1000,

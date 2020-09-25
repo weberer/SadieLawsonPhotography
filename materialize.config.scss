@@ -1,5 +1,10 @@
 @import '~materialize-css/sass/components/_color-variables';
 @import './src/css/_slp-colors';
+@import 'src/css/scrollbars';
+
+* {
+  @include scrollbars(10px, 30px, 5px, $primary-color-dark);
+}
 
 .btn, .btn-large, .btn-small {
   background-color: $primary-color !important;
