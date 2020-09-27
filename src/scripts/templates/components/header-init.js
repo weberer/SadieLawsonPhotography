@@ -1,4 +1,4 @@
-import '../../../css/header.scss';
+import '../../../css/components/header.scss';
 import M from 'materialize-css';
 
 const initHeader = () => {

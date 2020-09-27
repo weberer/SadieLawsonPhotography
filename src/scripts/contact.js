@@ -1,4 +1,5 @@
 import '../css/contact.scss';
+import './templates/components/paralax-header-init';
 
 // Init Materalize Selects and character counter
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,7 +8,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const textAreas = document.querySelectorAll('textarea#message');
     M.CharacterCounter.init(textAreas, {});
-
-    const parallax = document.querySelectorAll('.parallax');
-    M.Parallax.init(parallax, {});
 });

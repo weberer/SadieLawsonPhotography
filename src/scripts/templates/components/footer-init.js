@@ -1,1 +1,1 @@
-import '../../../css/footer.scss';
+import '../../../css/components/footer.scss';

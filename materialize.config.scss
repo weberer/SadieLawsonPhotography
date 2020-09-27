@@ -4,6 +4,16 @@
 
 * {
   @include scrollbars(10px, 30px, 5px, $primary-color-dark);
+  font-family: 'Work Sans', 'Arial', sans-serif;
+  font-weight: 400;
+}
+
+.helper-text, label {
+  font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Rubik', 'Trebuchet MS', sans-serif;
 }
 
 .btn, .btn-large, .btn-small {

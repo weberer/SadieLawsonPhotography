@@ -1,12 +1,7 @@
-const _PAGES = [
-    {name: 'Prices', href: 'prices.html'},
-    {name: 'Contact', href: 'contact.html'},
-    {name: 'About', href: 'about.html'},
-    {name: 'Home', href: 'index.html'}
-];
+import _PAGES from '../../../../resources/data/site-pages.js';
 
-//btn-flat primary-dark
-const _navButton = (text, page, isSideNav) => `<li><a href="${page}" class="waves-effect waves-light ${isSideNav ? "btn-flat primary-text-dark" : "btn"}">${text}</a></li>`;
+//btn primary-dark
+const _navButton = (text, page, isSideNav) => `<li><a href="${page}" class="waves-effect waves-light ${isSideNav ? "btn-flat primary-text-dark" : "btn-flat"}">${text}</a></li>`;
 
 const _buildNavButtons = isSideNav => _PAGES.map(page =>_navButton(page.name, page.href, isSideNav)).reduce((accumulator, page) => accumulator + page, '');
 

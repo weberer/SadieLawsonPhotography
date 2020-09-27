@@ -1,13 +1,1 @@
-#slp-main {
-    overflow-x: hidden;
-}
-.parallax {
-    .container {
-        position: relative;
-        padding-top: 10%;
-
-        .page-title {
-            font-weight: 500;
-        }
-    }
-}
+@import './components/paralax-header';
