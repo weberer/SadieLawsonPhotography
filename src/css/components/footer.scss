@@ -1,18 +1,19 @@
-#instagram-icon {
-  background-image: url("/resources/instagram.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 2.25rem;
-  width: 1.5em;
-}
+ .page-footer {
+   .icon-container {
+     img {
+       height: 1.75rem;
+       width: 1.5rem;
+       padding-bottom: 3px;
+     }
+   }
+ }
 
-footer {
-  .page-footer {
-    padding-top: 5px;
-  }
+ footer {
+   .page-footer {
+     padding-top: 5px;
+   }
 
-  .row {
-    margin-bottom: 0px;
-  }
-}
+   .row {
+     margin-bottom: 0;
+   }
+ }

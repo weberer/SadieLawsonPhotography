@@ -1,3 +1,4 @@
-const _main = '<div>Hello World</div>';
+import getHeader from "./components/paralax-header";
+import {getPageImage, getPageName, PAGE_IDS} from "../../../resources/data/site-pages";
 
-export default () => _main;
+export default () => `${getHeader(getPageImage(PAGE_IDS.INDEX), getPageName(PAGE_IDS.INDEX), '')}`;

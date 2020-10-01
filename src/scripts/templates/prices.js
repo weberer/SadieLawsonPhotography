@@ -1,4 +1,6 @@
 import priceList from '../../../resources/data/price-list';
+import getHeader from "./components/paralax-header";
+import {PAGE_IDS, getPageImage, getPageName} from "../../../resources/data/site-pages";
 
 const _buildRows = () => priceList.map(val => _buildTableRow(val)).reduce((prev, current) => prev + current, '');
 
@@ -11,7 +13,8 @@ const _buildTableRow = data => {
 </tr>`;
 }
 
-const _priceTable = `<table>
+export default () => `${getHeader(getPageImage(PAGE_IDS.PRICES), getPageName(PAGE_IDS.PRICES))}
+<!--<table id="price-table">
     <thead>
         <th>Session</th>
         <th>Price</th>
@@ -20,6 +23,4 @@ const _priceTable = `<table>
     <tbody>
         ${_buildRows()}
     </tbody>
-</table>`;
-
-export default () => _priceTable;
+</table>-->`;

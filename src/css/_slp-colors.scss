@@ -1,4 +1,3 @@
-//$primary-color: #f8dedf;
 $primary-color: #feedea;
 $primary-color-light: lighten($primary-color, 15%);
 $primary-color-dark: darken($primary-color, 20%);
@@ -8,6 +7,8 @@ $primary-color-dark-3: darken($primary-color, 40%);
 $secondary-color: #ffdc9f;
 $secondary-color-light: lighten($secondary-color, 20%);
 $secondary-color-dark: darken($secondary-color, 15%);
+
+$input-error-color: red;
 
 $charcoal: #36454f;
 

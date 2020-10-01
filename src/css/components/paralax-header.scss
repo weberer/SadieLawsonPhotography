@@ -2,13 +2,17 @@
   overflow-x: hidden;
 }
 
-.parallax {
-  .container {
-    position: relative;
-    padding-top: 10%;
+.parallax-container {
+    margin-bottom: 5rem;
 
-    .page-title {
-      font-weight: 500;
+  .parallax {
+    .container {
+      position: relative;
+      padding-top: 10%;
+
+      .page-title {
+        font-weight: 500;
+      }
     }
   }
 }

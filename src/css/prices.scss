@@ -1,43 +1,60 @@
 @import 'materialize.config';
+@import 'slp-colors';
+@import './components/radio-button-group';
+@import '~materialize-css/sass/components/color-variables';
 
 // Price table
-th {
-  text-transform: uppercase;
-  color: map-get($grey, "lighten-1");
-}
-
-td {
-  &:first-child {
+#price-table {
+  th {
     text-transform: uppercase;
+    color: map-get($grey, "lighten-1");
   }
-}
 
-td, th {
-  &:first-child {
-    text-align: right;
-    border-right: solid $primary-color 4px;
-    padding-right: 20px;
-
-    & + td, & + th {
-      padding-left: 20px;
+  td {
+    &:first-child {
+      text-transform: uppercase;
     }
   }
-}
 
-tr {
-  border-bottom: none!important;
-}
+  td, th {
+    &:first-child {
+      text-align: right;
+      border-right: solid $primary-color 4px;
+      padding-right: 20px;
 
-table {
-  margin-top: 5vh;
+      & + td, & + th {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  tr {
+    border-bottom: none!important;
+  }
+
+  table {
+    margin-top: 5vh;
+  }
 }
 
 // Price Cards
-
 .card-image {
   .card-title {
     font-size: 24px;
     font-weight: 500;
+  }
+
+  .card-notification {
+    margin: 0.7rem 0 0 0.7rem;
+    position: absolute;
+    left: 0;
+    max-width: 100%;
+    padding: 5px;
+    color: white;
+    font-size: 1rem;
+    z-index: 1;
+    background-color: $secondary-color-dark;
+    border-radius: 10px;
   }
 }
 
@@ -45,5 +62,32 @@ table {
   .card-subtitle {
     font-size: 18px;
     font-weight: 300;
+  }
+}
+
+@import '~materialize-css/sass/components/_variables';
+.price-modal {
+  width: 70%;
+  max-height: 80%;
+
+  @media #{$medium-and-down} {
+    width: 80%;
+    max-height: 100%;
+  }
+  @media #{$small-and-down}{
+    width: 100%;
+    top: 0 !important;
+    height: 100%;
+  }
+}
+
+.modal {
+  .modal-header {
+    width: 100%;
+
+    .btn, .btn-flat {
+      margin-top: 0.5rem;
+      margin-right: 0.5rem;
+    }
   }
 }

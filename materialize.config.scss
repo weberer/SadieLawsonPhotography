@@ -21,8 +21,20 @@ h1,h2,h3,h4,h5,h6 {
   color: $primary-color-dark-3 !important;
 }
 
-@media only screen and (min-width: 993px) {
-  .container {
-    width: 85% !important;
+#materialbox-overlay {
+  opacity: .93 !important;
+}
+
+.datepicker-modal {
+  width: 95%;
+}
+
+form {
+  .row {
+    margin-bottom: 0.4rem;
+    margin-top: 0;
+    & > .col {
+      @extend .row;
+    }
   }
 }
