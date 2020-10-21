@@ -47,8 +47,10 @@ form {
 
 .carousel {
   min-height: 50vw;
+  user-select: none;
   .carousel-item {
     min-height: 50vw;
+    pointer-events: none;
   }
 
   .btn-flat {
@@ -58,6 +60,13 @@ form {
     i {
       font-size: 6rem;
     }
+  }
+
+  .carousel-next-container {
+    display: flex;
+    top: 50%;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   .indicators > .indicator-item {

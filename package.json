@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "serve:webpack": "webpack --config webpack.dev.js --mode development --watch",
     "serve": "npm-run-all clean --parallel serve:*",
-    "build:webpack": "webpack --config webpack.config.js --mode production",
+    "build:webpack": "webpack --config webpack.dev.js --mode production",
     "build": "run-s clean build:*"
   },
   "repository": {

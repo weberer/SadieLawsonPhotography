@@ -95,15 +95,15 @@
 // Price Cards 2
 
 // Price Cards
-.card-content {
+.card-content, .card-image { //TODO: Remove .card-image. Only used for sample card from Sadie
   .card-title-row {
     display: flex;
     flex-direction: row;
 
     .card-title {
-      font-size: 24px;
-      font-weight: 500;
+      font-size: 40px;
       flex: 1;
+      font-family: 'Parisienne', cursive;
     }
   }
 
@@ -119,8 +119,10 @@
   }
 
   .card-subtitle {
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 2px;
   }
 
   .btn-floating.halfway-fab {

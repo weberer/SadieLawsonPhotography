@@ -33,8 +33,8 @@ const _buildCard = data => `
                     </a>
                 </div>
                 <span class="card-subtitle">${data.price}</span>
-                <p>${data.subtitle}</p><br>
-                <p>${data.description}</p>
+                <p class="card-subtitle primary-accent-text">${data.subtitle}</p><br>
+                <p class="card-subtitle primary-accent-text">${data.description}</p>
             </div>
         </div>
     </div>
@@ -46,5 +46,19 @@ export default () => `${getHeader(getPageImage(PAGE_IDS.PRICES), getPageName(PAG
     <div class="container">
         <div class="row">
             ${_buildCards()}
+        </div>
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="card price-card-2">
+                        <div class="card-image">
+                            ${_getNotification({})}
+                            <img class="materialboxed" src="../resources/photos/carousel/BabyandChildExperience.png" alt="Baby And Child Experience">
+                            <a href="${_getEventButtonHref({id: 10})}" class="btn-floating halfway-fab waves-effect modal-trigger secondary">
+                                <i class="material-icons charcoal-text">book_online</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                ${!_hasTicketLink({}) ? _buildModal(10) : ''}
         </div>
     </div>`;

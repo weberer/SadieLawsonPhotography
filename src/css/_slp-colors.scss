@@ -1,12 +1,15 @@
 $primary-color: #feedea;
 $primary-color-light: lighten($primary-color, 15%);
-$primary-color-dark: darken($primary-color, 20%);
+//$primary-color-dark: darken($primary-color, 20%);
+$primary-color-dark: #d2b1ab;
 $primary-color-dark-2: #d2b1ab;
 $primary-color-dark-3: darken($primary-color, 40%);
 
 $secondary-color: #ffdc9f;
 $secondary-color-light: lighten($secondary-color, 20%);
 $secondary-color-dark: darken($secondary-color, 15%);
+
+$primary-accent-color: #a3a3a3;
 
 $input-error-color: red;
 
@@ -25,7 +28,11 @@ $charcoal: #36454f;
 }
 
 .primary-extra-dark {
-  background-color: $primary-color-dark-2;
+  background-color: $primary-color-dark-2 !important;
+}
+
+.primary-accent {
+  background-color: $primary-accent-color !important;
 }
 
 .primary-text {
@@ -38,6 +45,10 @@ $charcoal: #36454f;
 
 .primary-text-extra-dark {
   color: $primary-color-dark-2 !important;
+}
+
+.primary-accent-text {
+  color: $primary-accent-color !important;
 }
 
 .secondary {

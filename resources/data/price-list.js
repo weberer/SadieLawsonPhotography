@@ -60,10 +60,10 @@ export default [
   },
   {
     id: 6,
-    name: 'BDSM-Special',
-    subtitle: 'Clothes optional, sexy not',
-    price: 'Starting at $1000',
-    description: '',
+    name: 'Baby & Child Portrait Experience',
+    subtitle: '45 Minute Shoot',
+    price: '&mdash;$75&mdash;',
+    description: 'Includes: <br>&nbsp;&nbsp;-Online Viewing Gallery<br>&nbsp;&nbsp;-Digital Download with print Rights',
     image: '../resources/photos/bdsm/bdsm.jpg'
   }
 ];

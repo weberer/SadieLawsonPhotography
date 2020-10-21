@@ -11,7 +11,7 @@ export default () => `${getHeader(getPageImage(PAGE_IDS.INDEX), getPageName(PAGE
             <a class="carousel-item" href="#three!"><img src="../resources/photos/carousel/BabyandChildExperience3.png"></a>
             <a class="carousel-item" href="#four!"><img src="../resources/photos/carousel/BabyandChildExperience4.png"></a>
             <a class="carousel-item" href="#five!"><img src="../resources/photos/carousel/BabyandChildExperience5.png"></a>
-            <a class="btn-flat carousel-next carousel-fixed-item primary-text-dark" href="#"><i class="material-icons">chevron_right</i></a>
+            <div class="carousel-fixed-item carousel-next-container"><a class="btn-flat carousel-next primary-text-dark" href="#"><i class="material-icons">chevron_right</i></a></div>
           </div>
       </div>
 </div>`;
