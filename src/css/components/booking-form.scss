@@ -1,0 +1,36 @@
+@import 'radio-button-group';
+@import '~materialize-css/sass/components/color-variables';
+@import '~materialize-css/sass/components/variables';
+@import '~materialize-css/sass/components/forms/input-fields';
+
+select {
+  &.hidden {
+    display: none;
+
+    & + label {
+      display: none;
+
+      & + span.helper-text {
+        display: none;
+      }
+    }
+  }
+
+  &.browser-default {
+    border: none;
+    border-bottom: $input-border;
+
+    &.invalid {
+      @extend %invalid-input-style;
+
+      & ~ span.helper-text::after {
+        content: attr(data-error) !important;
+        color: $input-error-color !important;
+      }
+
+      &.valid {
+        @extend %valid-input-style;
+      }
+    }
+  }
+}

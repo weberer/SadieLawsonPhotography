@@ -1,7 +1,7 @@
 $primary-color: #feedea;
 $primary-color-light: lighten($primary-color, 15%);
 $primary-color-dark: darken($primary-color, 20%);
-$primary-color-dark-2: darken($primary-color, 30%);
+$primary-color-dark-2: #d2b1ab;
 $primary-color-dark-3: darken($primary-color, 40%);
 
 $secondary-color: #ffdc9f;
@@ -16,8 +16,16 @@ $charcoal: #36454f;
   background-color: $primary-color !important;
 }
 
+.primary-light {
+  background-color: $primary-color-light !important;
+}
+
 .primary-dark {
   background-color: $primary-color-dark !important;
+}
+
+.primary-extra-dark {
+  background-color: $primary-color-dark-2;
 }
 
 .primary-text {
@@ -25,11 +33,15 @@ $charcoal: #36454f;
 }
 
 .primary-text-dark {
-  color: $primary-color-dark !important;;
+  color: $primary-color-dark !important;
+}
+
+.primary-text-extra-dark {
+  color: $primary-color-dark-2 !important;
 }
 
 .secondary {
-  background-color: $secondary-color !important;;
+  background-color: $secondary-color !important;
 }
 
 .secondary-dark {

@@ -14,7 +14,7 @@ const _buildTableRow = data => {
 }
 
 export default () => `${getHeader(getPageImage(PAGE_IDS.PRICES), getPageName(PAGE_IDS.PRICES))}
-<!--<table id="price-table">
+<table id="price-table">
     <thead>
         <th>Session</th>
         <th>Price</th>
@@ -23,4 +23,4 @@ export default () => `${getHeader(getPageImage(PAGE_IDS.PRICES), getPageName(PAG
     <tbody>
         ${_buildRows()}
     </tbody>
-</table>-->`;
+</table>`;

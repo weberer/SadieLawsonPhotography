@@ -32,7 +32,7 @@ export default [
     id: 3,
     name: 'Winter Mini-Session',
     subtitle: '&mdash;November 7th 8th 3:00pm - 5:30pm&mdash;',
-    notification: 'Limited Quantities Available',
+    notification: 'Only 1 Remaining!',
     price: '$50',
     description: 'Join me at Traditions Christmas Tree Farm for my 2020 Holiday mini sessions. Each session is designed ' +
         'to give you and yours time to have fun, laugh and make memories to treasure for a lifetime.<br><br>' +
