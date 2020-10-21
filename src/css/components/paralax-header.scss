@@ -1,0 +1,25 @@
+@import '../_slp-colors.scss';
+
+#slp-main {
+  overflow-x: hidden;
+}
+
+.parallax-container {
+    margin-bottom: 5rem;
+    height: 300px;
+
+  .parallax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .container {
+      position: relative;
+
+      .page-title {
+        font-family: 'Playfair Display SC', serif;
+        font-weight: 700;
+      }
+    }
+  }
+}

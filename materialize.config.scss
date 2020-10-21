@@ -1,0 +1,77 @@
+@import '~materialize-css/sass/components/_color-variables';
+@import './src/css/_slp-colors';
+@import 'src/css/scrollbars';
+
+* {
+  @include scrollbars(10px, 30px, 5px, $primary-color-dark);
+  font-family: 'Work Sans', 'Arial', sans-serif;
+  font-weight: 400;
+}
+
+.helper-text, label {
+  font-weight: 300;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  //font-family: 'Rubik', 'Trebuchet MS', sans-serif;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
+}
+
+.btn, .btn-large, .btn-small {
+  background-color: $primary-color !important;
+  color: $primary-color-dark-3 !important;
+}
+
+#materialbox-overlay {
+  opacity: .93 !important;
+}
+
+.datepicker-modal {
+  width: 95%;
+}
+
+form {
+  .row {
+    margin-bottom: 0.4rem;
+    margin-top: 0;
+    & > .col {
+      @extend .row;
+    }
+  }
+}
+
+.material-tooltip {
+  border-radius: 5px;
+}
+
+.carousel {
+  min-height: 50vw;
+  .carousel-item {
+    min-height: 50vw;
+  }
+
+  .btn-flat {
+    display: flex;
+    top: 50%;
+
+    i {
+      font-size: 6rem;
+    }
+  }
+
+  .indicators > .indicator-item {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
+    background-color: $primary-color !important;
+
+    &.active {
+      background-color: $primary-color-dark !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 78%;
+  }
+}

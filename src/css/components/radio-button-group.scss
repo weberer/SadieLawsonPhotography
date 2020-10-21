@@ -1,0 +1,78 @@
+@import '~materialize-css/sass/components/color-variables';
+@import '~materialize-css/sass/components/variables.scss';
+@import '../_slp-colors';
+
+.radio-button-group {
+  clear: both !important;
+  display: inline-block !important;
+  box-sizing: border-box !important;
+  margin-top: 0.6rem !important;
+
+  & *:before, & *:after {
+    box-sizing: inherit !important;
+  }
+
+  input[type="radio"] {
+    position: absolute !important;
+    //left: -9999rem !important;
+    //top: -9999rem !important;
+    visibility: hidden;
+    pointer-events: all !important;
+    overflow: initial !important;
+    margin: initial !important;
+    line-height: initial !important;
+    padding: .5rem 1rem !important;
+
+    & + label {
+      float: left !important;
+      padding: .5rem 1rem !important;
+      cursor: pointer;
+      background-color: $secondary-color !important;
+      border: 1px solid $secondary-color-dark !important;
+      margin-right: -1px !important;
+      color: black;
+      user-select: none !important;
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.14),
+                  2px 3px 1px -2px rgba(0, 0, 0, 0.12),
+                  2px 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+      &:first-of-type {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      &:last-of-type {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+    }
+
+    &:checked + label {
+      background-color: $secondary-color-dark !important;
+    }
+  }
+}
+
+div.radio-button-group.invalid {
+  input[type="radio"] + label {
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-top-color: $input-error-color !important;
+    border-bottom-color: $input-error-color !important;
+
+    &:first-of-type {
+      border-left-color: $input-error-color !important;
+    }
+
+    &:last-of-type {
+      border-right-color: $input-error-color !important;
+    }
+  }
+
+   ~ span.helper-text:after {
+    content: attr(data-error) !important;
+    color: $input-error-color !important;
+  }
+}
