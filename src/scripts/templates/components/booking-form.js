@@ -1,23 +1,30 @@
 import priceList from '../../../../resources/data/price-list';
 
-const _buildOption = data => `<option value="${data.id}">${data.name}</option>`;
+const _buildOption = (data, selectedId) => `<option value="${data.id}" ${selectedId === data.id ? 'selected' : ''}>${data.name}</option>`;
 
-const _buildOptions = () =>  priceList.map(item => _buildOption(item)).reduce((collector, option) => collector + option, '');
+const _buildOptions = function(selectedId) {
+    return priceList.map(item => _buildOption(item, selectedId)).reduce((collector, option) => collector + option, '');
+};
 
 const _getDatePicker = () => `
 <input id="booking_date" name="Date" type="date">
 <label class="active">Preferred Date *</label>
 <span class="helper-text" data-error="Please choose a valid date"></span>`;
 
-const _getProductSelect = () => `<select>
-    <option value disabled selected>Select Option</option>
-        ${_buildOptions()}
+const _getProductSelect = (id, selectedId) => `<select id="product-select-${id}" name="Product" class="browser-default ${selectedId !== undefined ? 'hidden" disabled' : '"'}>
+    <option value disabled ${selectedId === undefined ? 'selected' : ''}>Select Option</option>
+        ${_buildOptions(selectedId)}
     <option value="other">Other</option>
 </select>
-<label>Session you are Inquiring About *</label>
+<label for="product-select" class="active">Session you are Inquiring About *</label>
 <span class="helper-text" data-error="Please select a session type"></span>`;
 
-const abc = (isFullPage, id) => (`
+//TODO: Verify style of Date and Product inputs on both prices and contact page
+//TODO: Add styling for native input when in normal and error states
+//TODO: Move hidden styling for select from prices.scss into new booking-form.scss and import on both prices and contact\
+
+
+const buildBookingForm = (isFullPage, id) => (`
     <form id="booking-form-${id}" name="BookingForm${id}" class="col s12 m10 offset-m2"')">
         <div class="row">
             <div class="input-field col s12 m5">
@@ -39,18 +46,10 @@ const abc = (isFullPage, id) => (`
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12 m5">`
-                + (isFullPage ? _getProductSelect() : _getDatePicker()) +
-            `</div>
+            <div class="input-field col s12 m5">
+                ${(isFullPage ? _getProductSelect(id) : _getProductSelect(id, id) + _getDatePicker())}
+            </div>
             <div class="input-field col s12 m6">
-                <!--<select>
-                    <option value disabled selected>Select Option</option>
-                    <option value="email">Email</option>
-                    <option value="text">Text</option>
-                    <option value="call">Phone Call</option>
-                </select>
-                <label>Preferred Contact Method *</label>
-                <span class="helper-text" data-error="Please select a preferred contact method"></span> -->
                 <div id="contact-method-${id}" class="radio-button-group" data-error="Please select a contact method">
                     <input type="radio" id="radio-email-${id}" value="email" name="ContactMethod">
                     <label for="radio-email-${id}">Email</label>
@@ -78,10 +77,10 @@ const abc = (isFullPage, id) => (`
             </div>
         </div>
         <div class="row">
-            <div class="col offset-s9 offset-m8 offset-l9">
-            <input type="submit" value="Send Request" class="btn waves-effect">
+            <div class="col offset-s7 offset-m8">
+            <input type="submit" value="Send Request" class="btn secondary secondary-text-dark waves-effect">
             </div>
         </div>
     </form>`);
 
-export default (isFullPage, name) => abc(isFullPage, name);
+export default (isFullPage, name) => buildBookingForm(isFullPage, name);

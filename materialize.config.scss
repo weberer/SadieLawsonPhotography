@@ -13,7 +13,9 @@
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Rubik', 'Trebuchet MS', sans-serif;
+  //font-family: 'Rubik', 'Trebuchet MS', sans-serif;
+  font-family: 'Playfair Display SC', serif;
+  font-weight: 700;
 }
 
 .btn, .btn-large, .btn-small {
@@ -36,5 +38,49 @@ form {
     & > .col {
       @extend .row;
     }
+  }
+}
+
+.material-tooltip {
+  border-radius: 5px;
+}
+
+.carousel {
+  min-height: 50vw;
+  user-select: none;
+  .carousel-item {
+    min-height: 50vw;
+    pointer-events: none;
+  }
+
+  .btn-flat {
+    display: flex;
+    top: 50%;
+
+    i {
+      font-size: 6rem;
+    }
+  }
+
+  .carousel-next-container {
+    display: flex;
+    top: 50%;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .indicators > .indicator-item {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
+    background-color: $primary-color !important;
+
+    &.active {
+      background-color: $primary-color-dark !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 78%;
   }
 }

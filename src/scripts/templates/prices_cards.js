@@ -10,7 +10,7 @@ const _hasTicketLink = data => data.ticketLink;
 
 const _getEventButtonHref = data =>  _hasTicketLink(data) ? data.ticketLink + `" target="_blank` : `#price-card-modal_${data.id}`;
 
-const _buildModal = data => `<div id="price-card-modal_${data.id}" class="price-modal modal">
+const _buildModal = id => `<div id="price-card-modal_${id}" class="price-modal modal">
         <div class="modal-header row">
             <h5 class="col">Book a Session</h5>
             <a href="#!" class="col right modal-close btn-flat waves-effect">
@@ -18,7 +18,7 @@ const _buildModal = data => `<div id="price-card-modal_${data.id}" class="price-
             </a>
         </div>
         <div class="modal-content">
-            ${bookingForm(false, data.id)}
+            ${bookingForm(false, id)}
         </div>
     </div>`;
 
@@ -40,7 +40,7 @@ const _buildCard = data => `
             </div>
         </div>
     </div>
-    ${!_hasTicketLink(data) ? _buildModal(data) : ''}`;
+    ${!_hasTicketLink(data) ? _buildModal(data.id) : ''}`;
 
 const _buildCards = () => priceList.map(val => _buildCard(val)).reduce((prev, current) => prev + current, '');
 

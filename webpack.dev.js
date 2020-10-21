@@ -16,7 +16,7 @@ module.exports = {
         aboutTemplate: './src/scripts/templates/about.js',
         headerTemplate: './src/scripts/templates/components/header.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
-        pricesCardTemplate: './src/scripts/templates/prices_cards.js'
+        pricesCardTemplate: './src/scripts/templates/prices_cards_2.js'
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -101,8 +101,9 @@ module.exports = {
                 footerTemplate: '#slp-footer'
             },
             'prices.html': {
-                pricesTemplate: '#slp-main',
-                pricesCardTemplate: '#slp-main-cards',
+                //pricesTemplate: '#slp-main',
+                //pricesCardTemplate: '#slp-main-cards',
+                pricesCardTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
