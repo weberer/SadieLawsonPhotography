@@ -8,11 +8,6 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
-
-    // This option controls if and how source maps are generated.
-    // https://webpack.js.org/configuration/devtool/
-    devtool: 'source-map',
-
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
         main: './src/scripts/main.js',
@@ -25,6 +20,7 @@ module.exports = {
         aboutTemplate: './src/scripts/templates/about.js',
         headerTemplate: './src/scripts/templates/components/header.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
+        pricesCardTemplate: './src/scripts/templates/prices_cards.js'
     },
 
     // how to write the compiled files to disk
@@ -50,11 +46,13 @@ module.exports = {
                 ],
             },
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-env']
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
                 }
             },
             {
@@ -106,6 +104,7 @@ module.exports = {
             },
             'prices.html': {
                 pricesTemplate: '#slp-main',
+                pricesCardTemplate: '#slp-main-cards',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
