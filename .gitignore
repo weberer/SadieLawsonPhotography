@@ -92,7 +92,7 @@ dist
 .vuepress/dist
 
 # Serverless directories
-.serverless/z
+.serverless/
 
 # FuseBox cache
 .fusebox/
@@ -103,5 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-#IntelliJ IDEA config files
 .idea/
+
+_site

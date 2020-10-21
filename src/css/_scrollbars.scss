@@ -1,0 +1,35 @@
+@mixin scrollbars($width, $height, $thumbRadius, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $width;
+    height: $height;
+  }
+
+  &::-webkit-scrollbar-corner {
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+    border-radius: $thumbRadius;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+
+  & {
+    // For Internet Explorer
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+
+    // For FireFox
+    scrollbar-color: $foreground-color $background-color;
+    @if $width < 15px {
+      scrollbar-width: thin;
+    } @else {
+      scrollbar-width: auto;
+    }
+  }
+}

@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/weberer/SadieLawsonPhotography#readme",
   "dependencies": {
-    "jquery": "^3.5.1",
-    "jquery-datepicker": "^1.12.3",
     "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {

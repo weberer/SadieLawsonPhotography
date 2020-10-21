@@ -1,5 +1,3 @@
-@import '~materialize-css/sass/components/color-variables';
-@import '~materialize-css/sass/components/variables.scss';
 @import '../_slp-colors';
 
 .radio-button-group {
@@ -14,9 +12,8 @@
 
   input[type="radio"] {
     position: absolute !important;
-    //left: -9999rem !important;
-    //top: -9999rem !important;
-    visibility: hidden;
+    left: -9999rem !important;
+    top: -9999rem !important;
     pointer-events: all !important;
     overflow: initial !important;
     margin: initial !important;
@@ -30,13 +27,10 @@
       background-color: $secondary-color !important;
       border: 1px solid $secondary-color-dark !important;
       margin-right: -1px !important;
-      color: black;
+      color: white;
       user-select: none !important;
       font-size: 12px !important;
       font-weight: 400 !important;
-      box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.14),
-                  2px 3px 1px -2px rgba(0, 0, 0, 0.12),
-                  2px 1px 5px 0 rgba(0, 0, 0, 0.2);
 
       &:first-of-type {
         border-top-left-radius: 4px;
@@ -59,15 +53,15 @@ div.radio-button-group.invalid {
   input[type="radio"] + label {
     border-width: 2px !important;
     border-style: solid !important;
-    border-top-color: $input-error-color !important;
-    border-bottom-color: $input-error-color !important;
+    border-top-color: red !important;
+    border-bottom-color: red !important;
 
     &:first-of-type {
-      border-left-color: $input-error-color !important;
+      border-left-color: red !important;
     }
 
     &:last-of-type {
-      border-right-color: $input-error-color !important;
+      border-right-color: red !important;
     }
   }
 

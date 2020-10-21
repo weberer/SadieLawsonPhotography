@@ -1,7 +1,8 @@
 import pages from '../../../../resources/data/site-pages.js';
 import * as logo from '../../../../resources/brandResources/sadie.png';
 
-const _navButton = (text, page, isSideNav) => `<li><a href="${page}" class="waves-effect waves-light ${isSideNav ? "btn-flat primary-text-dark" : "btn-flat primary-text-dark"}">${text}</a></li>`;
+//btn primary-dark
+const _navButton = (text, page, isSideNav) => `<li><a href="${page}" class="waves-effect waves-light ${isSideNav ? "btn-flat primary-text-dark" : "btn-flat"}">${text}</a></li>`;
 
 const _buildNavButtons = isSideNav => pages.map(page =>_navButton(page.name, page.href, isSideNav)).reduce((accumulator, page) => accumulator + page, '');
 
