@@ -25,6 +25,10 @@ nav {
           position: relative;
           padding: 5px;
         }
+
+        .sidenav-trigger {
+          height: 50px !important; //Prevents trigger from being taller than the header
+        }
       }
     }
   }
