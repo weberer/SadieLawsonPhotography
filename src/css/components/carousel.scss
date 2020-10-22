@@ -1,0 +1,89 @@
+@import "../slp-colors";
+
+$large-screen: "only screen and (min-width : 993px)";
+$medium-and-up: "only screen and (min-width : 601px)";
+
+$imageAspectRatio: 7/5;
+$imageWidth: 90vw;
+$imageWidthLarge: 65vw;
+$imageHeight: $imageWidth / $imageAspectRatio;
+$imageHeightLarge: $imageWidthLarge / $imageAspectRatio;
+$carouselMargin: (100vw - $imageWidth) / 2;
+$carouselMarginLarge: (100vw - $imageWidthLarge) / 2;
+
+$button-size: 4rem;
+
+.carousel {
+  left: $carouselMargin !important;
+  height: $imageHeight !important;
+  width: $imageWidth;
+  user-select: none;
+
+  @media #{$large-screen} {
+    left: $carouselMarginLarge !important;
+    height: $imageHeightLarge !important;
+    width: $imageWidthLarge;
+  }
+
+  .carousel-item {
+    pointer-events: none;
+
+    img {
+      height: $imageHeight;
+      width: $imageWidth;
+
+      @media #{$large-screen} {
+        height: $imageHeightLarge;
+        width: $imageWidthLarge;
+      }
+    }
+  }
+
+  .carousel-button-container {
+    display: flex;
+    top: 50%;
+    flex-direction: row;
+    height: $button-size;
+
+    .carousel-padding {
+      flex: 1;
+    }
+
+    @media #{$medium-and-up} {
+      .carousel-previous {
+        margin-left: 1rem;
+      }
+
+      .carousel-next {
+        margin-right: 1rem;
+      }
+    }
+
+    @media #{$large-screen} {
+      .carousel-previous {
+        margin-left: 2.5rem;
+      }
+
+      .carousel-next {
+        margin-right: 2.5rem;
+      }
+    }
+
+    i {
+      font-size: $button-size;
+    }
+  }
+
+  .indicators  {
+    bottom: 10px !important;
+
+    & > .indicator-item {
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
+      background-color: $primary-color !important;
+
+      &.active {
+        background-color: $primary-color-dark !important;
+      }
+    }
+  }
+}

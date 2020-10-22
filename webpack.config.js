@@ -16,6 +16,7 @@ module.exports = {
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
         main: './src/scripts/main.js',
+        index: './src/scripts/index.js',
         prices: './src/scripts/prices.js',
         contact: './src/scripts/contact.js',
         about: './src/scripts/about.js',
@@ -74,7 +75,7 @@ module.exports = {
             template: './src/html/index.html',
             inject: 'head',
             excludeChunks: ['indexTemplate'],
-            chunks:  ['main'],
+            chunks:  ['main', 'index'],
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
