@@ -17,7 +17,9 @@ select {
   }
 
   &.browser-default {
+    //noinspection CssReplaceWithShorthandSafely
     border: none;
+    //noinspection CssReplaceWithShorthandSafely
     border-bottom: $input-border;
 
     &.invalid {
@@ -27,10 +29,10 @@ select {
         content: attr(data-error) !important;
         color: $input-error-color !important;
       }
+    }
 
-      &.valid {
-        @extend %valid-input-style;
-      }
+    &.valid {
+      @extend %valid-input-style;
     }
   }
 }

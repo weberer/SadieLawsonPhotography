@@ -75,10 +75,14 @@ $button-size: 4rem;
   }
 
   .indicators  {
-    bottom: 10px !important;
+    bottom: -10px !important; //!important needed to override default indicator height
+
+    @media #{$medium-and-up} {
+      bottom: 10px !important;
+    }
 
     & > .indicator-item {
-      box-shadow: 0 0 5px 2px rgba(0, 0, 0, .25);
+      box-shadow: 0 0 4px 2px rgba(0, 0, 0, .2);
       background-color: $primary-color !important;
 
       &.active {
