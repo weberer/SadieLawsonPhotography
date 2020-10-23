@@ -1,0 +1,46 @@
+.testimonials {
+  h5 {
+    font-family: 'Parisienne', serif;
+    margin-bottom: 2rem;
+    font-size: clamp(30px, 3vw, 60px);
+  }
+
+  .testimonial {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    margin-bottom: 6rem;
+
+    .testimonial-img-container {
+      width: clamp(30vh, 40vw, 40vw);
+      align-self: flex-start;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .testimonial-text-container {
+      display: block;
+      flex: 1;
+
+      .testimonial-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        padding: 1.5rem;
+        background-color: white;
+        top: 4rem;
+        left: 7vw;
+      }
+    }
+
+    &:nth-child(2n) {
+      flex-direction: row;
+
+      .testimonial-text {
+        left: -7vw;
+      }
+    }
+  }
+}

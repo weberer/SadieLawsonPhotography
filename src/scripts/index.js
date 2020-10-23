@@ -1,3 +1,5 @@
+import '../css/components/testimonial.scss';
+
 const CAROUSEL_CYCLE_TIME = 7000;
 const CAROUSEL_ID = 'investment-carousel';
 const NEXT_BTN_CLASS = 'carousel-next';
