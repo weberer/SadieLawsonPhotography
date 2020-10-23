@@ -20,9 +20,6 @@ const _getProductSelect = (id, selectedId) => `<select id="product-select-${id}"
 <span class="helper-text" data-error="Please select a session type"></span>`;
 
 //TODO: Verify style of Date and Product inputs on both prices and contact page
-//TODO: Add styling for native input when in normal and error states
-//TODO: Move hidden styling for select from prices.scss into new booking-form.scss and import on both prices and contact\
-
 
 const buildBookingForm = (isFullPage, id) => (`
     <form id="booking-form-${id}" name="BookingForm${id}" class="col s12 m10 offset-m2"')">
@@ -78,7 +75,7 @@ const buildBookingForm = (isFullPage, id) => (`
         </div>
         <div class="row">
             <div class="col offset-s7 offset-m8">
-            <input type="submit" value="Send Request" class="btn secondary secondary-text-dark waves-effect">
+                <button type="submit" class="btn secondary charcoal-text waves-effect">Send Request</button>
             </div>
         </div>
     </form>`);
