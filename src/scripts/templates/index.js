@@ -1,5 +1,6 @@
 import getHeader from "./components/paralax-header";
 import {getPageImage, getPageName, PAGE_IDS} from "../../../resources/data/site-pages";
+import buildTestimonials from "./components/testimonial";
 
 export default () => `${getHeader(getPageImage(PAGE_IDS.INDEX), getPageName(PAGE_IDS.INDEX), '')}
     <div id="investment-carousel" class="carousel carousel-slider">
@@ -15,5 +16,5 @@ export default () => `${getHeader(getPageImage(PAGE_IDS.INDEX), getPageName(PAGE
         </div>
     </div>
     <div class="container">
-        <div class="row"></div>
+        <div class="row">${buildTestimonials()}</div>
     </div>`;
