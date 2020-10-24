@@ -6,7 +6,7 @@ export default [
     {
         id: 0,
         alt: 'Sadie Makes Me Look Badass',
-        image: _IMAGE_DIR + '/witch.jpg',
+        image: _IMAGE_DIR + 'witch.jpg',
         text: "Sadie made me look like a badass-witch-bitch. I couldn't be happier. She even took photos of my cat for " +
             "free! Her prices are super reasonable too, all it cost me was putting a spell on her husband to make him " +
             "last longer in bed. " + emoji.womanMage + emoji.broom + emoji.eggplant
