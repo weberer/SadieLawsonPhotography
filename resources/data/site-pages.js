@@ -11,8 +11,8 @@ export const PAGE_IDS = {
 };
 
 const _pages = {
-    [PAGE_IDS.INDEX]: {name: 'Home', href: 'index.html', image: _PHOTO_DIR  + 'couples/couple_E_M.jpg'},
-    [PAGE_IDS.ABOUT]: {name: 'Meet Sadie', href: 'about.html', image: _PHOTO_DIR  + 'other/other-3.jpg'},
+    [PAGE_IDS.INDEX]: {name: 'Meet Sadie', href: 'index.html', image: _PHOTO_DIR  + 'couples/couple_E_M.jpg'},
+    [PAGE_IDS.ABOUT]: {name: 'Testimonials', href: 'testimonials.html', image: _PHOTO_DIR  + 'other/other-3.jpg'},
     [PAGE_IDS.PRICES]: {name: 'Investment', href: 'prices.html', image: _PHOTO_DIR  + 'couples/couples2.jpg'},
     [PAGE_IDS.CONTACT]: {name: 'Contact', href: 'contact.html', image: _PHOTO_DIR  + 'other/other-2.jpg'},
     [PAGE_IDS.GALLERY]: {name: 'Gallery', href: contactInfo.pixieset}

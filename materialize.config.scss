@@ -12,9 +12,15 @@
   font-weight: 300;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h6 {
   font-family: 'Playfair Display SC', serif;
   font-weight: 700;
+}
+
+h5 {
+  font-family: 'Parisienne', serif;
+  margin-bottom: 2rem !important;
+  font-size: clamp(35px, 3vw, 60px) !important;
 }
 
 .btn, .btn-large, .btn-small {

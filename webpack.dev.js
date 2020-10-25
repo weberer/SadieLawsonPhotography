@@ -10,14 +10,13 @@ module.exports = {
         index: './src/scripts/index.js',
         prices: './src/scripts/prices.js',
         contact: './src/scripts/contact.js',
-        about: './src/scripts/about.js',
+        testimonials: './src/scripts/testimonials.js',
         indexTemplate: './src/scripts/templates/index.js',
-        pricesTemplate: './src/scripts/templates/prices.js',
+        pricesTemplate: './src/scripts/templates/prices_cards_v2.js',
         contactTemplate: './src/scripts/templates/contact.js',
-        aboutTemplate: './src/scripts/templates/about.js',
+        testimonialsTemplate: './src/scripts/templates/testimonials.js',
         headerTemplate: './src/scripts/templates/components/header.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
-        pricesCardTemplate: './src/scripts/templates/prices_cards_2.js'
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -89,11 +88,11 @@ module.exports = {
             filename: 'contact.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/html/about.html',
+            template: './src/html/testimonials.html',
             inject: 'head',
-            excludeChunks: ['aboutTemplate'],
-            chunks: ['main', 'about'],
-            filename: 'about.html'
+            excludeChunks: ['testimonialsTemplate'],
+            chunks: ['main', 'testimonials'],
+            filename: 'testimonials.html'
         }),
         new HtmlWebpackPrerenderPlugin({
             'index.html': {
@@ -102,9 +101,7 @@ module.exports = {
                 footerTemplate: '#slp-footer'
             },
             'prices.html': {
-                //pricesTemplate: '#slp-main',
-                //pricesCardTemplate: '#slp-main-cards',
-                pricesCardTemplate: '#slp-main',
+                pricesTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
@@ -113,8 +110,8 @@ module.exports = {
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
-            'about.html': {
-                aboutTemplate: '#slp-main',
+            'testimonials.html': {
+                testimonialsTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },

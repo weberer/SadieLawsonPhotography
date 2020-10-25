@@ -1,12 +1,6 @@
 @import "../media-queries";
 
 .testimonials {
-  h5 {
-    font-family: 'Parisienne', serif;
-    margin-bottom: 2rem;
-    font-size: clamp(30px, 3vw, 60px);
-  }
-
   .testimonial {
     display: flex;
     flex-direction: row-reverse;
