@@ -26,10 +26,10 @@ const _buildCard = data => `
         <div class="card price-card-2">
             <div class="card-content">
                 <div class="card-title-row">
-                    <span class="card-title primary-text-dark">${data.name}</span>
+                    <h5 class="card-title primary-text-dark">${data.name}</h5>
                     ${_getNotification(data)}
                     <a href="${_getEventButtonHref(data)}" class="btn-floating halfway-fab waves-effect modal-trigger secondary tooltipped" data-tooltip="Request a Session">
-                        <i class="material-icons charcoal-text">book_online</i> <!--event-->
+                        <i class="material-icons charcoal-text">book_online</i>
                     </a>
                 </div>
                 <span class="card-subtitle">${data.price}</span>
@@ -46,19 +46,5 @@ export default () => `${getHeader(getPageImage(PAGE_IDS.PRICES), getPageName(PAG
     <div class="container">
         <div class="row">
             ${_buildCards()}
-        </div>
-            <div class="row">
-                <div class="col s12 m8 offset-m2">
-                    <div class="card price-card-2">
-                        <div class="card-image">
-                            ${_getNotification({})}
-                            <img class="materialboxed" src="../resources/photos/carousel/BabyandChildExperience.png" alt="Baby And Child Experience">
-                            <a href="${_getEventButtonHref({id: 10})}" class="btn-floating halfway-fab waves-effect modal-trigger secondary">
-                                <i class="material-icons charcoal-text">book_online</i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                ${!_hasTicketLink({}) ? _buildModal(10) : ''}
         </div>
     </div>`;

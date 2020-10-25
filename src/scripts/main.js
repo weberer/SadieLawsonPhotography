@@ -1,6 +1,5 @@
 import 'materialize-loader!../../materialize.config';
 import '../css/main.scss';
-import '../css/components/carousel.scss'
 import './templates/components/footer-init'
 import './templates/components/paralax-header-init';
 import * as url from '../../resources/brandResources/favicon.png';

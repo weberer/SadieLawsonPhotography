@@ -19,11 +19,11 @@ module.exports = {
         index: './src/scripts/index.js',
         prices: './src/scripts/prices.js',
         contact: './src/scripts/contact.js',
-        about: './src/scripts/about.js',
+        about: './src/scripts/testimonials.js',
         indexTemplate: './src/scripts/templates/index.js',
         pricesTemplate: './src/scripts/templates/prices.js',
         contactTemplate: './src/scripts/templates/contact.js',
-        aboutTemplate: './src/scripts/templates/about.js',
+        aboutTemplate: './src/scripts/templates/testimonials.js',
         headerTemplate: './src/scripts/templates/components/header.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
     },
@@ -93,7 +93,7 @@ module.exports = {
             filename: 'contact.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/html/about.html',
+            template: './src/html/testimonials.html',
             inject: 'head',
             excludeChunks: ['aboutTemplate'],
             chunks: ['main', 'about'],
