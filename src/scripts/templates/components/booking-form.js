@@ -19,8 +19,6 @@ const _getProductSelect = (id, selectedId) => `<select id="product-select-${id}"
 <label for="product-select" class="active">Session you are Inquiring About *</label>
 <span class="helper-text" data-error="Please select a session type"></span>`;
 
-//TODO: Verify style of Date and Product inputs on both prices and contact page
-
 const buildBookingForm = (isFullPage, id) => (`
     <form id="booking-form-${id}" name="BookingForm${id}" class="col s12 m10 offset-m2"')">
         <div class="row">

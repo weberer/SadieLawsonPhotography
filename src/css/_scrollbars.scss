@@ -5,10 +5,6 @@
     height: $height;
   }
 
-  &::-webkit-scrollbar-corner {
-
-  }
-
   &::-webkit-scrollbar-thumb {
     background: $foreground-color;
     border-radius: $thumbRadius;

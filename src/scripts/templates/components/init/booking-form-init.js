@@ -23,10 +23,18 @@ const _resetFormInputs = form => {
     _htmlElementCollectionToArray(validInputs).forEach(input => input.classList.remove('valid'));
 }
 
+const _updateInputStyle = (input, isValid) => {
+    if(input) {
+        input.classList.remove(isValid ? 'invalid' : 'valid');
+        input.classList.add(isValid ? 'valid' : 'invalid');
+    }
+    return input && isValid;
+}
+
 const _validateRadioGroup = (radioGroup, parent) => {
     const radioGroupArray = _htmlElementCollectionToArray(radioGroup);
     const selected = radioGroupArray.map(input => input.checked).reduce((accumulator, isChecked) => accumulator || isChecked, false);
-    _updateInputStyle(parent, selected);
+    return _updateInputStyle(parent, selected);
 }
 
 const _getRadioGroupFromInput = radioInput => {
@@ -36,17 +44,11 @@ const _getRadioGroupFromInput = radioInput => {
     return inputElementArray.filter(input => input.type === 'radio' && input.name === radioGroupName);
 }
 
-const _updateInputStyle = (input, isValid) => {
-    if(input) {
-        input.classList.remove(isValid ? 'invalid' : 'valid');
-        input.classList.add(isValid ? 'valid' : 'invalid');
-    }
-}
-
 const _validateInput = (input) => {
-    if(input) {
-        _updateInputStyle(input, (input.value !== '' && input.value !== undefined));
-    }
+    if(input)
+        return _updateInputStyle(input, (input.value !== '' && input.value !== undefined));
+
+    return false;
 }
 
 const _validateBookingForm = (formName, event) => {
@@ -63,20 +65,24 @@ const _validateBookingForm = (formName, event) => {
     const referralInput = form.Referral;
 
     const contactMethodParent = contactMethodInputGroup[0].parentElement;
+    let isFormValid = true;
+
     // DateInput doesn't appear on contact page
     if(dateInput)
-        _validateInput(dateInput, event);
+        isFormValid = _validateInput(dateInput, event) && isFormValid;
 
-    _validateInput(productInput, event);
-    _validateRadioGroup(contactMethodInputGroup, contactMethodParent);
+    isFormValid = _validateInput(productInput, event) && isFormValid;
+    isFormValid = _validateRadioGroup(contactMethodInputGroup, contactMethodParent) && isFormValid;
 
-    const jsonData = _buildJsonData(firstNameInput.value, lastNameInput.value, emailInput.value, productInput.value,
-        dateInput ? dateInput.value : '', contactMethodInputGroup.value, messageInput.value, referralInput.value);
+    if(isFormValid) {
+        const jsonData = _buildJsonData(firstNameInput.value, lastNameInput.value, emailInput.value, productInput.value,
+            dateInput ? dateInput.value : '', contactMethodInputGroup.value, messageInput.value, referralInput.value);
 
-    console.log(jsonData);
-    //TODO: Add JSON payload generation and submission to lambda function for email/processing
+        console.log(jsonData);
+        //TODO: Add JSON payload generation and submission to lambda function for email/processing
 
-    form.reset();
+        form.reset();
+    }
 }
 
 // Add form and custom input validation handlers

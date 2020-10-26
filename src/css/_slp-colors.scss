@@ -1,76 +1,42 @@
+$charcoal: #36454f;
+
 $primary-color: #feedea;
 $primary-color-light: lighten($primary-color, 15%);
-//$primary-color-dark: darken($primary-color, 20%);
 $primary-color-dark: #d2b1ab;
-$primary-color-dark-2: #d2b1ab;
-$primary-color-dark-3: darken($primary-color, 40%);
+$primary-color-dark-2: darken($primary-color-dark, 10%);
+$primary-accent-color: #a3a3a3;
 
 $secondary-color: #ffdc9f;
 $secondary-color-light: lighten($secondary-color, 20%);
 $secondary-color-dark: darken($secondary-color, 15%);
-
-$primary-accent-color: #a3a3a3;
+$secondary-accent-color: $charcoal;
 
 $input-error-color: red;
 
-$charcoal: #36454f;
+// ---- Primary Colors ----
+.primary { background-color: $primary-color !important; }
+.primary-light { background-color: $primary-color-light !important; }
+.primary-dark { background-color: $primary-color-dark !important; }
+.primary-dark-2 { background-color: $primary-color-dark-2 !important; }
+.primary-accent { background-color: $primary-accent-color !important; }
 
-.primary {
-  background-color: $primary-color !important;
-}
+// ---- Primary Text Colors ----
+.primary-text { color: $primary-color !important; }
+.primary-text-light { color: $primary-color-light !important; }
+.primary-text-dark { color: $primary-color-dark !important; }
+.primary-text-dark-2 { color: $primary-color-dark-2 !important; }
+.primary-accent-text { color: $primary-accent-color !important; }
 
-.primary-light {
-  background-color: $primary-color-light !important;
-}
+// ---- Secondary Colors ----
+.secondary { background-color: $secondary-color !important; }
+.secondary-light { background-color: $secondary-color-light !important; }
+.secondary-dark { background-color: $secondary-color-dark !important; }
 
-.primary-dark {
-  background-color: $primary-color-dark !important;
-}
+// ---- Secondary Text Colors ----
+.secondary-text { color: $secondary-color !important; }
+.secondary-light { color: $secondary-color-light !important; }
+.secondary-text-dark { color: $secondary-color-dark !important; }
 
-.primary-extra-dark {
-  background-color: $primary-color-dark-2 !important;
-}
-
-.primary-accent {
-  background-color: $primary-accent-color !important;
-}
-
-.primary-text {
-  color: $primary-color !important;
-}
-
-.primary-text-dark {
-  color: $primary-color-dark !important;
-}
-
-.primary-text-extra-dark {
-  color: $primary-color-dark-2 !important;
-}
-
-.primary-accent-text {
-  color: $primary-accent-color !important;
-}
-
-.secondary {
-  background-color: $secondary-color !important;
-}
-
-.secondary-dark {
-  background-color: $secondary-color-dark !important;
-}
-
-.secondary-text {
-  color: $secondary-color !important;
-}
-
-.secondary-text-dark {
-  color: $secondary-color-dark !important;
-}
-
-.charcoal {
-  background-color: $charcoal !important;
-}
-
-.charcoal-text {
-  color: $charcoal !important;
-}
+// ---- Other Color Classes ----
+.charcoal { background-color: $charcoal !important; }
+.charcoal-text { color: $charcoal !important; }

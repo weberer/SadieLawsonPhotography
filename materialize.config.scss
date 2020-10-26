@@ -1,9 +1,10 @@
 @import '~materialize-css/sass/components/_color-variables';
+@import './src/css/media-queries';
 @import './src/css/_slp-colors';
 @import 'src/css/scrollbars';
 
 * {
-  @include scrollbars(10px, 30px, 5px, $primary-color-dark);
+  @include scrollbars(10px, 30px, 5px, $primary-color-dark-2);
   font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
   font-size: 16px;
@@ -26,7 +27,7 @@ h5 {
 
 .btn, .btn-large, .btn-small {
   background-color: $primary-color !important;
-  color: $primary-color-dark-3 !important;
+  color: $primary-color-dark-2 !important;
 }
 
 #materialbox-overlay {
@@ -51,7 +52,7 @@ form {
   border-radius: 5px;
 }
 
-@media only screen and (min-width: 993px) {
+@media #{$large-and-up} {
   .container {
     width: 78%;
   }
