@@ -1,26 +1,18 @@
 @import '~materialize-css/sass/components/_color-variables';
 @import './src/css/media-queries';
 @import './src/css/_slp-colors';
-@import 'src/css/scrollbars';
-
-* {
-  @include scrollbars(10px, 30px, 5px, $primary-color-dark-2);
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  font-size: 16px;
-}
 
 .helper-text, label {
   font-weight: 300;
 }
 
 h1,h2,h3,h4,h6 {
-  font-family: 'Playfair Display SC', serif;
+  font-family: $header-font-1;
   font-weight: 700;
 }
 
 h5 {
-  font-family: 'Parisienne', serif;
+  font-family: $header-font-2;
   margin-bottom: 2rem !important;
   font-size: clamp(35px, 3vw, 60px) !important;
 }

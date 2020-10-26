@@ -1,4 +1,12 @@
-@import './components/header.scss';
+@import './components/header';
+@import './scrollbars';
+
+* {
+  @include scrollbars(10px, 30px, 5px, $primary-color-dark-2);
+  font-family: $body-font;
+  font-weight: 400;
+  font-size: 16px;
+}
 
 body, #root {
   display: flex;
