@@ -11,7 +11,7 @@ export const PAGE_IDS = {
 const _pages = {
     [PAGE_IDS.INDEX]: {name: 'Meet Sadie', href: 'index.html'},
     [PAGE_IDS.TESTIMONIALS]: {name: 'Testimonials', href: 'testimonials.html'},
-    [PAGE_IDS.INVESTMENT]: {name: 'Investment', href: 'prices.html'},
+    [PAGE_IDS.INVESTMENT]: {name: 'Investment', href: 'investment.html'},
     [PAGE_IDS.CONTACT]: {name: 'Contact', href: 'contact.html'},
     [PAGE_IDS.GALLERY]: {name: 'Gallery', href: contactInfo.pixieset}
 };
