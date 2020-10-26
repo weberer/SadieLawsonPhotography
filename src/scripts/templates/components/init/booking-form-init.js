@@ -1,13 +1,13 @@
-import priceList from '../../../../resources/data/price-list';
+import priceList from '../../../../../resources/data/price-list';
 
 document.addEventListener('DOMContentLoaded', function() {
     const textAreas = document.querySelectorAll('textarea#message');
     M.CharacterCounter.init(textAreas, {});
 });
 
-const htmlElementCollectionToArray = collection => Array.prototype.slice.call(collection);
+const _htmlElementCollectionToArray = collection => Array.prototype.slice.call(collection);
 
-const buildJsonData = (firstName, lastName, email, product, date, contactMethod, message, referral) => ({
+const _buildJsonData = (firstName, lastName, email, product, date, contactMethod, message, referral) => ({
     "firstName": firstName,
     "lastName": lastName,
     "email": email,
@@ -18,38 +18,38 @@ const buildJsonData = (firstName, lastName, email, product, date, contactMethod,
     "referralMethod": referral
 });
 
-const resetFormInputs = form => {
+const _resetFormInputs = form => {
     const validInputs = form.getElementsByClassName('valid');
-    htmlElementCollectionToArray(validInputs).forEach(input => input.classList.remove('valid'));
+    _htmlElementCollectionToArray(validInputs).forEach(input => input.classList.remove('valid'));
 }
 
-const validateRadioGroup = (radioGroup, parent) => {
-    const radioGroupArray = htmlElementCollectionToArray(radioGroup);
+const _validateRadioGroup = (radioGroup, parent) => {
+    const radioGroupArray = _htmlElementCollectionToArray(radioGroup);
     const selected = radioGroupArray.map(input => input.checked).reduce((accumulator, isChecked) => accumulator || isChecked, false);
-    updateInputStyle(parent, selected);
+    _updateInputStyle(parent, selected);
 }
 
-const getRadioGroupFromInput = radioInput => {
+const _getRadioGroupFromInput = radioInput => {
     const radioGroupName = radioInput.name;
     const inputElements = radioInput.form.getElementsByTagName('input');
-    const inputElementArray = htmlElementCollectionToArray(inputElements);
+    const inputElementArray = _htmlElementCollectionToArray(inputElements);
     return inputElementArray.filter(input => input.type === 'radio' && input.name === radioGroupName);
 }
 
-const updateInputStyle = (input, isValid) => {
+const _updateInputStyle = (input, isValid) => {
     if(input) {
         input.classList.remove(isValid ? 'invalid' : 'valid');
         input.classList.add(isValid ? 'valid' : 'invalid');
     }
 }
 
-const validateInput = (input) => {
+const _validateInput = (input) => {
     if(input) {
-        updateInputStyle(input, (input.value !== '' && input.value !== undefined));
+        _updateInputStyle(input, (input.value !== '' && input.value !== undefined));
     }
 }
 
-const validateBookingForm = (formName, event) => {
+const _validateBookingForm = (formName, event) => {
     event.preventDefault();
     const form = document[formName];
 
@@ -65,12 +65,12 @@ const validateBookingForm = (formName, event) => {
     const contactMethodParent = contactMethodInputGroup[0].parentElement;
     // DateInput doesn't appear on contact page
     if(dateInput)
-        validateInput(dateInput, event);
+        _validateInput(dateInput, event);
 
-    validateInput(productInput, event);
-    validateRadioGroup(contactMethodInputGroup, contactMethodParent);
+    _validateInput(productInput, event);
+    _validateRadioGroup(contactMethodInputGroup, contactMethodParent);
 
-    const jsonData = buildJsonData(firstNameInput.value, lastNameInput.value, emailInput.value, productInput.value,
+    const jsonData = _buildJsonData(firstNameInput.value, lastNameInput.value, emailInput.value, productInput.value,
         dateInput ? dateInput.value : '', contactMethodInputGroup.value, messageInput.value, referralInput.value);
 
     console.log(jsonData);
@@ -83,22 +83,22 @@ const validateBookingForm = (formName, event) => {
 document.addEventListener('DOMContentLoaded', () => {
     for (const form of document.getElementsByTagName('form')) {
         const name = form.name;
-        form.addEventListener('submit', event => validateBookingForm(name, event));
-        form.addEventListener('reset', event => resetFormInputs(event.target));
+        form.addEventListener('submit', event => _validateBookingForm(name, event));
+        form.addEventListener('reset', event => _resetFormInputs(event.target));
     }
 
     for (const select of document.getElementsByTagName('select')) {
     if (select.classList.contains('browser-default'))
-        select.addEventListener('change', event => validateInput(select, event));
+        select.addEventListener('change', event => _validateInput(select, event));
     }
 
     for (const input of document.getElementsByTagName('input')) {
         if (input.type === 'radio') {
             input.addEventListener('change', event => {
                 const radioInput = event.target;
-                const radioGroup = getRadioGroupFromInput(radioInput);
+                const radioGroup = _getRadioGroupFromInput(radioInput);
                 const radioParent = radioInput.parentElement;
-                validateRadioGroup(radioGroup, radioParent)
+                _validateRadioGroup(radioGroup, radioParent)
             });
         }
     }

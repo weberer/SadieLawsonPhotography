@@ -1,2 +1,2 @@
 import '../css/testimonials.scss';
-import './templates/components/testimonial-init';
+import './templates/components/init/testimonial-init';

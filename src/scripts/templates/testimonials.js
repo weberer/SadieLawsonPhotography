@@ -1,12 +1,13 @@
-import {PAGE_IDS, getPageImage, getPageName} from '../../../resources/data/site-pages';
+import {PAGE_IDS, getPageName} from '../../../resources/data/site-pages';
 import getHeader from './components/paralax-header';
-import buildTestimonials from "./components/testimonial";
+import buildTestimonial from "./components/testimonial";
+import testimonials from "../../../resources/data/testimonials";
 
-const _PAGE_SUBTITLE = ``;
 
-const _aboutContent = `${getHeader(getPageImage(PAGE_IDS.ABOUT), getPageName(PAGE_IDS.ABOUT), _PAGE_SUBTITLE)}
+export default () => `${getHeader(getPageName(PAGE_IDS.TESTIMONIALS))}
     <div class="container">
-        <div class="row">${buildTestimonials()}</div>
+        <div class="row testimonials">
+            <h5 class="primary-text-dark center">Here's What People are Saying...</h5>
+            ${testimonials.reduce((accumulator, testimonial) => accumulator + buildTestimonial(testimonial), '')}
+        </div>
     </div>`;
-
-export default () => _aboutContent;

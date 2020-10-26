@@ -8,11 +8,11 @@ module.exports = {
     entry: {
         main: './src/scripts/main.js',
         index: './src/scripts/index.js',
-        prices: './src/scripts/prices.js',
+        prices: './src/scripts/investment.js',
         contact: './src/scripts/contact.js',
         testimonials: './src/scripts/testimonials.js',
         indexTemplate: './src/scripts/templates/index.js',
-        pricesTemplate: './src/scripts/templates/prices_cards_v2.js',
+        pricesTemplate: './src/scripts/templates/investment.js',
         contactTemplate: './src/scripts/templates/contact.js',
         testimonialsTemplate: './src/scripts/templates/testimonials.js',
         headerTemplate: './src/scripts/templates/components/header.js',
@@ -74,7 +74,7 @@ module.exports = {
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/html/prices.html',
+            template: './src/html/investment.html',
             inject: 'head',
             excludeChunks: ['pricesTemplate'],
             chunks: ['main', 'prices'],

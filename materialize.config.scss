@@ -4,8 +4,9 @@
 
 * {
   @include scrollbars(10px, 30px, 5px, $primary-color-dark);
-  font-family: 'Work Sans', 'Arial', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 400;
+  font-size: 16px;
 }
 
 .helper-text, label {

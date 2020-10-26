@@ -1,8 +1,8 @@
 import getHeader from "./components/paralax-header";
-import {getPageImage, getPageName, PAGE_IDS} from "../../../resources/data/site-pages";
-import * as sadiePhoto from '../../../resources/photos/sadie.jpg';
+import {getPageName, PAGE_IDS} from "../../../resources/data/site-pages";
+import * as sadiePhoto from '../../../resources/photos/meetSadie/sadie.jpg';
 
-export default () => `${getHeader(getPageImage(PAGE_IDS.INDEX), getPageName(PAGE_IDS.INDEX), '')}
+export default () => `${getHeader(getPageName(PAGE_IDS.INDEX))}
     <div class="container">
         <div id="meet-sadie">
             <h5 class="center primary-text-dark">Hi I'm Sadie!</h5>
@@ -17,7 +17,7 @@ export default () => `${getHeader(getPageImage(PAGE_IDS.INDEX), getPageName(PAGE
                 When I am not behind I am a mom to a two year old little girl, and two cats. The wife to an amazing husband 
                 (who is my number 1 fan and biggest supporter, and full time social worker.
                 <br><br>
-                Thank you for taking the time to “meet me”. I can’t wait to be apart of your life journey!
+                Thank you for taking the time to “meet me”. I can’t wait to be a part of your life journey!
             </p>
         </div>
         <!--<div class="divider"></div>

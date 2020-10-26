@@ -5,7 +5,7 @@ const _navButton = (text, page, isSideNav) => `<li><a href="${page}" class="wave
 
 const _buildNavButtons = isSideNav => pages.map(page =>_navButton(page.name, page.href, isSideNav)).reduce((accumulator, page) => accumulator + page, '');
 
-const headerHTML = `<nav class="navbar-fixed white">
+export default () => `<nav class="navbar-fixed white">
     <div class="nav-wrapper">
         <div class="nav-content">
             <div class="container">
@@ -30,5 +30,3 @@ const headerHTML = `<nav class="navbar-fixed white">
     </li>
     ${_buildNavButtons(true)}
 </ul>`;
-
-export default () => headerHTML;
