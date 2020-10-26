@@ -1,9 +1,9 @@
 import 'materialize-loader!../../materialize.config';
 import '../css/main.scss';
-import './templates/components/footer-init'
-import './templates/components/paralax-header-init';
+import './templates/components/init/footer-init'
+import './templates/components/init/paralax-header-init';
 import * as url from '../../resources/brandResources/favicon.png';
-import initHeader from './templates/components/header-init';
+import initHeader from './templates/components/init/header-init';
 import M from "materialize-css";
 
 initHeader();

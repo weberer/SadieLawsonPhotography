@@ -6,17 +6,21 @@ const HtmlWebpackPrerenderPlugin = require('html-webpack-prerender-plugin');
 
 module.exports = {
     entry: {
-        main: './src/scripts/main.js',
-        index: './src/scripts/index.js',
-        prices: './src/scripts/prices.js',
         contact: './src/scripts/contact.js',
+        error: './src/scripts/error.js',
+        index: './src/scripts/index.js',
+        main: './src/scripts/main.js',
+        prices: './src/scripts/investment.js',
         testimonials: './src/scripts/testimonials.js',
-        indexTemplate: './src/scripts/templates/index.js',
-        pricesTemplate: './src/scripts/templates/prices_cards_v2.js',
+
         contactTemplate: './src/scripts/templates/contact.js',
+        errorTemplate: './src/scripts/templates/error.js',
+        indexTemplate: './src/scripts/templates/index.js',
+        pricesTemplate: './src/scripts/templates/investment.js',
         testimonialsTemplate: './src/scripts/templates/testimonials.js',
+
         headerTemplate: './src/scripts/templates/components/header.js',
-        footerTemplate: './src/scripts/templates/components/footer.js',
+        footerTemplate: './src/scripts/templates/components/footer.js'
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -67,6 +71,20 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
+            template: './src/html/contact.html',
+            inject: 'head',
+            excludeChunks: ['contactTemplate'],
+            chunks: ['main', 'contact'],
+            filename: 'contact.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/error.html',
+            inject: 'head',
+            excludeChunks: ['errorTemplate'],
+            chunks: ['main', 'error'],
+            filename: 'error.html'
+        }),
+        new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'head',
             excludeChunks: ['indexTemplate'],
@@ -74,18 +92,11 @@ module.exports = {
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: './src/html/prices.html',
+            template: './src/html/investment.html',
             inject: 'head',
             excludeChunks: ['pricesTemplate'],
             chunks: ['main', 'prices'],
             filename: 'prices.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/html/contact.html',
-            inject: 'head',
-            excludeChunks: ['contactTemplate'],
-            chunks: ['main', 'contact'],
-            filename: 'contact.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/testimonials.html',
@@ -95,18 +106,21 @@ module.exports = {
             filename: 'testimonials.html'
         }),
         new HtmlWebpackPrerenderPlugin({
+            'contact.html': {
+                contactTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'error.html': {
+                errorTemplate: '#slp-main'
+            },
             'index.html': {
                 indexTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
-            'prices.html': {
+            'investment.html': {
                 pricesTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
-            },
-            'contact.html': {
-                contactTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
@@ -114,7 +128,7 @@ module.exports = {
                 testimonialsTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
-            },
+            }
         }),
     ]
 };

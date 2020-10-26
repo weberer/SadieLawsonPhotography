@@ -39,6 +39,5 @@ export default [
         text:'Sadie was a joy to work with when she photographed our wedding day! She created an easy going atmosphere ' +
             'filled with laughs that allowed her to capture our genuine selves. Her work is amazing, and I highly ' +
             'recommend her services to anyone.'
-
     }
 ]
