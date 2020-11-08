@@ -3,5 +3,7 @@ export default {
     email: 'sadie@sadielawsonphotography.com',
     facebook: 'https://www.facebook.com/Sadie-Lawson-Photography-103120284452624',
     instagram: 'https://www.instagram.com',
-    pixieset: 'https://sadielawsonphotography.pixieset.com/'
+    pixieset: 'https://sadielawsonphotography.pixieset.com/',
+    buyGiftCard: 'https://squareup.com/gift/ML8PRD0XDYQ3Z/order',
+    checkGiftCardBalance: 'https://squareup.com/gift/ML8PRD0XDYQ3Z/check-balance'
 }
