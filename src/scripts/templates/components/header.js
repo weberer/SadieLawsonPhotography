@@ -1,9 +1,9 @@
-import pages from '../../../../resources/data/site-pages.js';
+import {pages, getHref, isHidden, getPageName} from "../../../../resources/data/site-pages";
 import * as logo from '../../../../resources/brandResources/sadie.png';
 
-const _navButton = (text, page, isSideNav) => `<li><a href="${page}" class="waves-effect waves-light ${isSideNav ? "btn-flat primary-text-dark" : "btn-flat primary-text-dark"}">${text}</a></li>`;
+const _navButton = (text, href, isSideNav) => `<li><a href="${href}" class="waves-effect waves-light ${isSideNav ? "btn-flat primary-text-dark" : "btn-flat primary-text-dark"}">${text}</a></li>`;
 
-const _buildNavButtons = isSideNav => pages.map(page =>_navButton(page.name, page.href, isSideNav)).reduce((accumulator, page) => accumulator + page, '');
+const _buildNavButtons = isSideNav => pages.map(id => !isHidden(id) ? _navButton(getPageName(id), getHref(id), isSideNav) : '').reduce((accumulator, page) => accumulator + page, '');
 
 export default () => `<nav class="navbar-fixed white">
     <div class="nav-wrapper">

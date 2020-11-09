@@ -23,11 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const setFavicon = () => {
-    let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+    const head = document.getElementsByTagName('head')[0];
+    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
     link.href = url.default;
-    document.getElementsByTagName('head')[0].appendChild(link);
+    head.appendChild(link);
 }
 
 setFavicon();

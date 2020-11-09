@@ -10,13 +10,14 @@ module.exports = {
         error: './src/scripts/error.js',
         index: './src/scripts/index.js',
         main: './src/scripts/main.js',
-        prices: './src/scripts/investment.js',
+        investment: './src/scripts/investment.js',
         testimonials: './src/scripts/testimonials.js',
+        giftCards: './src/scripts/giftCards.js',
 
         contactTemplate: './src/scripts/templates/contact.js',
         errorTemplate: './src/scripts/templates/error.js',
         indexTemplate: './src/scripts/templates/index.js',
-        pricesTemplate: './src/scripts/templates/investment.js',
+        investmentTemplate: './src/scripts/templates/investment.js',
         testimonialsTemplate: './src/scripts/templates/testimonials.js',
 
         headerTemplate: './src/scripts/templates/components/header.js',
@@ -94,9 +95,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/html/investment.html',
             inject: 'head',
-            excludeChunks: ['pricesTemplate'],
-            chunks: ['main', 'prices'],
-            filename: 'prices.html'
+            excludeChunks: ['investmentTemplate'],
+            chunks: ['main', 'investment'],
+            filename: 'investment.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/testimonials.html',
@@ -104,6 +105,18 @@ module.exports = {
             excludeChunks: ['testimonialsTemplate'],
             chunks: ['main', 'testimonials'],
             filename: 'testimonials.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/giftCard.html',
+            inject: 'head',
+            chunks: ['main', 'giftCards'],
+            filename: 'giftCard.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/checkBalance.html',
+            inject: 'head',
+            chunks: ['main', 'giftCards'],
+            filename: 'checkBalance.html'
         }),
         new HtmlWebpackPrerenderPlugin({
             'contact.html': {
@@ -120,7 +133,7 @@ module.exports = {
                 footerTemplate: '#slp-footer'
             },
             'investment.html': {
-                pricesTemplate: '#slp-main',
+                investmentTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
