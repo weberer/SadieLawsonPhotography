@@ -3,34 +3,117 @@ const _PHOTO_DIR = '../resources/photos/';
 export default [
   {
     id: 1,
-    name: 'Wedding Session',
-    subtitle: 'You get hitched, I get rich',
-    price: 'Starting at $2000',
-    description: 'This package includes everything from the engagement package, plus 4 hours of wedding photos. Not ' +
-        'providing the photographer with food at the reception adds $200 to the price.',
-    image: _PHOTO_DIR  + 'wedding/wedding-flowers.jpg',
-    smallWidth: '12',
-    mediumWidth: '12',
-    largeWidth: '8',
-    smallOffset: '',
-    mediumOffset: '',
-    largeOffset: '2'
+    name: 'Weddings',
+    subtitle: '6 hours',
+    price: '&mdash;Starting at $400&mdash;',
+    description: `Wedding Packages Include:
+    <ul>
+      <li>50 Curated and Edited Photos</li>
+      <li>Complementary Engagement Session OR Additional Photos</li>
+      <li>Digital Gallery</li>
+      <li>Print Rights</li>
+    </ul>
+    <span class="primary-accent-text">Optional Add-Ons:</span>
+    <ul>
+      <li>Additional Photos - $5 Each</li>
+      <li>Additional Time - $50 per Hour</li>
+      <li>Unlimited Photos - $200</li>
+    </ul>`,
+  },
+  {
+    id: 1,
+    name: 'Elopement Weddings',
+    subtitle: '8 Hours',
+    price: '&mdash;Starting at $200&mdash;',
+    description: `Elopement Wedding Packages Include Everything From the Standard Wedding Package, Plus:
+    <ul>
+      <li>Extra 2 Hours</li>
+      <li>50% Discount</li>
+      <li>50 miles (Round trip) of Photographer Travel</li>
+    </ul>
+    <span class="primary-accent-text">Optional Add-Ons:</span>
+    <ul>
+      <li>Extended Travel Distance - Calculated Per Mile</li>
+    </ul>`,
   },
   {
     id: 2,
     name: 'Engagement Session',
-    subtitle: 'Pics of you and bae',
-    price: 'Starting at $100',
-    description: 'This package includes everything 8 photos which I guarantee will make you look fat and ugly.',
-    image: _PHOTO_DIR  + 'engagement/couple-kissing.jpg',
-    smallWidth: '12',
-    mediumWidth: '6',
-    largeWidth: '4',
-    smallOffset: '',
-    mediumOffset: '',
-    largeOffset: ''
+    subtitle: '&mdash;Packages Starting at $400&mdash;',
+    price: 'Starting at $150',
+    description: `Engagement Sessions Include:
+    <ul>
+      <li>15 Curated and Edited Photos</li>
+      <li>Single Location</li>
+      <li>50 miles (Round Trip) of Photographer Travel</li>
+      <li>Digital Gallery</li>
+      <li>Print Rights</li>
+    </ul>
+    <span class="primary-accent-text">Optional Add-Ons:</span>
+    <ul>
+      <li>Extended Travel Distance - Calculated Per Mile</li>
+      <li>Second Location - $50</li>
+      <li>Additional Photos - $5 Each</li>
+    </ul>`
   },
   {
+    id: 3,
+    name: 'Family Photo Session',
+    subtitle: '30 Minute Shoot',
+    price: '&mdash;Starting at $50&mdash;',
+    description: `Family Photo sessions include: 
+    <ul>
+        <li>Up to 4 Family Members*</li>
+        <li>10+ Curated and Edited Photos</li>
+        <li>Digital Gallery</li>
+        <li>Print Rights</li>
+    </ul>
+    <span class="text-small primary-accent-text">* Additional family members cost $10 per person</span>`
+  },
+  {
+    id: 4,
+    name: 'Senior Photo Session',
+    subtitle: 'It\'s finally here, senior year!! Let me help you remember this life milestone',
+    price: 'Starting at $100',
+    description: `Senior Photo Sessions Include:
+    <ul>
+        <li>2 Locations (Indoor, Outdoor or Both)*</li>
+        <li>2 Outfits</li>
+        <li>10 Photos**</li>      
+        <li>Consulting session before the shoot to help you look your best</li>  
+        <li>Digital Gallery</li>
+        <li>Print Rights</li>
+    </ul>
+    <span class="text-small primary-accent-text">* Locations must be within 7 miles of each other. Additional charges will be incurred on a per-mile basis<br>
+    ** Additional photos available for $10 each</span>`,
+  },
+  { id: 5,
+    name: 'Newborn Session',
+    subtitle: `2 Hour Session`,
+    price: '&mdash;Starting at $100&mdash;',
+    description: `Newborn Sessions Include:
+    <ul>
+        <li>2 hours*</li>
+        <li>Flexible Location; In-Studio or At-Home</li>
+        <li>5+ Curated and Edited Photos</li>
+        <li>Digital Gallery</li>
+        <li>Print Rights</li>
+    </ul>
+    <span class="text-small primary-accent-text">*Additional time available at $50 per hour</span>`
+  },
+  {
+    id: 6,
+    name: 'Baby & Child Portrait Experience',
+    subtitle: '45 Minute Sessions',
+    price: '&mdash;Starting at $75&mdash;',
+    description: `The Baby & Child Portrait Experience Includes: 
+    <ul>
+        <li>10+ Curated and Edited Photos</li>
+        <li>Digital Gallery</li>
+        <li>Print Rights</li>
+    </ul>`
+  },
+  /*{
     id: 3,
     name: 'Winter Mini-Session',
     subtitle: '&mdash;November 7th 8th 3:00pm - 5:30pm&mdash;',
@@ -42,30 +125,5 @@ export default [
     image: _PHOTO_DIR  + 'winter-mini/winter-mini-1 - Copy.jpg',
     ticketLink: 'https://www.eventbrite.com/e/2020-holiday-mini-sessions-tickets-122913907807',
     largeWidth: '8'
-  },
-  {
-    id: 4,
-    name: 'Maternity Session',
-    subtitle: 'Because even a whale can look sexy...',
-    price: 'Starting at $3.1415',
-    description: '',
-    image: _PHOTO_DIR  + 'maternity/maternity.jpg',
-    mediumWidth: '7'
-  },
-  { id: 5,
-    name: 'Newborn Session',
-    subtitle: `I've had poops bigger than that!`,
-    price: '$100 per lb of newborn',
-    description: '',
-    image: _PHOTO_DIR  + 'newborn/newborn.jpg',
-    mediumWidth: '5'
-  },
-  {
-    id: 6,
-    name: 'Baby & Child Portrait Experience',
-    subtitle: '45 Minute Shoot',
-    price: '&mdash;$75&mdash;',
-    description: 'Includes: <br>&nbsp;&nbsp;-Online Viewing Gallery<br>&nbsp;&nbsp;-Digital Download with print Rights',
-    image: _PHOTO_DIR  + 'bdsm/bdsm.jpg'
-  }
+  },*/
 ];

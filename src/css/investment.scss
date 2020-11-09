@@ -12,6 +12,18 @@
     }
   }
 
+  .text-small {
+    font-size: 13px;
+  }
+
+  ul {
+    margin-top: 0;
+    li {
+      margin-left: 1.5rem;
+      color: $primary-accent-color;
+    }
+  }
+
   .card-notification {
     margin: 0 60px 0.7rem 0;
     position: relative;
