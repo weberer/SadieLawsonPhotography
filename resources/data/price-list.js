@@ -5,7 +5,7 @@ export default [
     id: 1,
     name: 'Weddings',
     subtitle: '6 hours',
-    price: '&mdash;Starting at $400&mdash;',
+    price: '&mdash;Starting at $600&mdash;',
     description: `Wedding Packages Include:
     <ul>
       <li>50 Curated and Edited Photos</li>
@@ -39,11 +39,12 @@ export default [
   {
     id: 2,
     name: 'Engagement Session',
-    subtitle: '&mdash;Packages Starting at $400&mdash;',
-    price: 'Starting at $150',
+    subtitle: '',
+    price: '&mdash;Packages Starting at $100&mdash;',
     description: `Engagement Sessions Include:
     <ul>
       <li>15 Curated and Edited Photos</li>
+      <li>Complementary Engagement Session OR Additional Photos</li>
       <li>Single Location</li>
       <li>50 miles (Round Trip) of Photographer Travel</li>
       <li>Digital Gallery</li>
@@ -74,39 +75,70 @@ export default [
     id: 4,
     name: 'Senior Photo Session',
     subtitle: 'It\'s finally here, senior year!! Let me help you remember this life milestone',
-    price: 'Starting at $100',
+    price: 'Starting at $150',
     description: `Senior Photo Sessions Include:
     <ul>
         <li>2 Locations (Indoor, Outdoor or Both)*</li>
         <li>2 Outfits</li>
-        <li>10 Photos**</li>      
+        <li>7 Photos**</li>      
         <li>Consulting session before the shoot to help you look your best</li>  
         <li>Digital Gallery</li>
         <li>Print Rights</li>
     </ul>
-    <span class="text-small primary-accent-text">* Locations must be within 7 miles of each other. Additional charges will be incurred on a per-mile basis<br>
+    <span class="text-small primary-accent-text">* Locations must be within 10 miles of each other. Additional charges will be incurred on a per-mile basis<br>
     ** Additional photos available for $10 each</span>`,
-  },
-  { id: 5,
-    name: 'Newborn Session',
-    subtitle: `2 Hour Session`,
-    price: '&mdash;Starting at $100&mdash;',
-    description: `Newborn Sessions Include:
-    <ul>
-        <li>2 hours*</li>
-        <li>Flexible Location; In-Studio or At-Home</li>
-        <li>5+ Curated and Edited Photos</li>
-        <li>Digital Gallery</li>
-        <li>Print Rights</li>
-    </ul>
-    <span class="text-small primary-accent-text">*Additional time available at $50 per hour</span>`
   },
   {
     id: 6,
-    name: 'Baby & Child Portrait Experience',
+    name: 'Cherish the Gift of Life Package',
+    subtitle: '',
+    price: '&mdash;Starting at $450&mdash;',
+    description: `Cherish the gift of your child with this amazing offer 
+    from SadieLawsonPhotography. This package includes EVERYTHING in our Maternity,
+    Newborn and Life's Milestone Packages, with a $50 discount. This is the perfect way
+    to celebrate the wonders of your growing family. 
+    <span class="text-small primary-accent-text">*All additional fees and charges still apply<span>`
+  },
+  {
+    id: 6,
+    name: 'Maternity',
     subtitle: '45 Minute Sessions',
-    price: '&mdash;Starting at $75&mdash;',
-    description: `The Baby & Child Portrait Experience Includes: 
+    price: '&mdash;Starting at $150&mdash;',
+    description: `Life\'s Milestone Sessions Include: 
+    <ul>
+        <li>10+ Curated and Edited Photos*</li>
+        <li>One Outfit**</li>
+        <li>Digital Gallery</li>
+        <li>Print Rights</li>
+    </ul>
+    <span class="text-small primary-accent-text">*Additional photos available fot $5 each</span>
+    <span class="text-small primary-accent-text">**Additional outfits available for $25 each</span>`
+  },
+  { id: 5,
+    name: 'Newborn',
+    subtitle: `2 Hour Session*`,
+    price: '&mdash;Starting at $200&mdash;',
+    description: `Newborn Sessions Include:
+    <ul>
+        <li>2 hours*</li>
+        <li>Flexible Location, In-Studio or At-Home**</li>
+        <li>5+ Curated and Edited Photos</li>
+        <li>Digital Gallery</li>
+        <li>Print Rights</li>
+        <li></li>
+    </ul> 
+    <span class="text-small primary-accent-text">*Additional time available at $50 per hour</span>
+    <span class="primary-accent-text">*Prices are for in studio sessions. An additional $50 charge applies for on-location sessions</span>`
+  },
+  {
+    id: 6,
+    name: 'Life\'s Milestones',
+    subtitle: '1 hour Sessions',
+    price: '&mdash;Starting at $150&mdash;',
+    description: `It is amazing how fast children grow! Capture the precious moments of your child's
+    first year of life with this amazing deal.
+    <br><br>
+    Life\'s Milestones Session Includes: 
     <ul>
         <li>10+ Curated and Edited Photos</li>
         <li>Digital Gallery</li>

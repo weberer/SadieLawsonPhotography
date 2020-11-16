@@ -11,11 +11,11 @@ export const PAGE_IDS = {
 };
 
 const _pages = {
-    [PAGE_IDS.INDEX]: {name: 'Meet Sadie', href: 'index.html'},
-    [PAGE_IDS.TESTIMONIALS]: {name: 'Testimonials', href: 'testimonials.html'},
-    [PAGE_IDS.INVESTMENT]: {name: 'Investment', href: 'investment.html'},
-    [PAGE_IDS.CONTACT]: {name: 'Contact', href: 'contact.html'},
-    [PAGE_IDS.GALLERY]: {name: 'Gallery', href: contactInfo.pixieset},
+    [PAGE_IDS.INDEX]: {name: 'Meet Sadie', href: 'index.html', order: 1},
+    [PAGE_IDS.TESTIMONIALS]: {name: 'Testimonials', href: 'testimonials.html', order: 2},
+    [PAGE_IDS.INVESTMENT]: {name: 'Investment', href: 'investment.html', order: 3},
+    [PAGE_IDS.CONTACT]: {name: 'Contact', href: 'contact.html', order: 4},
+    [PAGE_IDS.GALLERY]: {name: 'Gallery', href: contactInfo.pixieset, order: 5},
     [PAGE_IDS.PURCHASE_GIFT_CARD]: {name: 'Purchase Gift Card', href: contactInfo.buyGiftCard, hidden: true},
     [PAGE_IDS.CHECK_GIFT_CARD_BALANCE]: {name: 'Check Gift Card Balance', href: contactInfo.checkGiftCardBalance, hidden: true}
 };
@@ -24,5 +24,7 @@ const _getPageAttribute = (pageId, attr) => _pages[pageId][attr];
 
 export const getPageName = pageId => _getPageAttribute(pageId, 'name');
 export const getHref = pageId => _getPageAttribute(pageId, 'href');
+export const getOrder = pageId => _getPageAttribute(pageId, 'order');
 export const isHidden = pageId => _getPageAttribute(pageId, 'hidden');
+
 export const pages = Object.values(PAGE_IDS);

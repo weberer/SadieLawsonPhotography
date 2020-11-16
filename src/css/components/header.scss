@@ -2,6 +2,7 @@
 
 nav {
   background-color: white;
+  user-select: none;
 
   .nav-wrapper {
     button {
@@ -23,6 +24,23 @@ nav {
           padding: 5px;
         }
 
+        .nav-btn-container {
+          ul {
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            li {
+              margin-left: 5px;
+              margin-right: 5px;
+              a {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+              }
+            }
+          }
+        }
+
         .sidenav-trigger {
           height: 50px !important; //Prevents trigger from being taller than the header
         }
@@ -32,6 +50,9 @@ nav {
 }
 
 .sidenav {
+  display: flex;
+  flex-direction: column;
+
   .user-view {
     height: 10rem;
 
@@ -40,6 +61,12 @@ nav {
       height: 100%;
       padding: 1rem;
       object-fit: contain;
+    }
+  }
+
+  li {
+    a {
+      margin: 0 !important;
     }
   }
 }

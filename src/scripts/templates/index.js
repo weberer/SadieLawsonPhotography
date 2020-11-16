@@ -1,6 +1,7 @@
 import getHeader from "./components/paralax-header";
 import {getPageName, PAGE_IDS} from "../../../resources/data/site-pages";
 import * as sadiePhoto from '../../../resources/photos/meetSadie/sadie.jpg';
+import * as family from '../../../resources/photos/meetSadie/family.jpg';
 
 export default () => `${getHeader(getPageName(PAGE_IDS.INDEX))}
     <div class="container">
@@ -17,6 +18,7 @@ export default () => `${getHeader(getPageName(PAGE_IDS.INDEX))}
                 When I am not behind I am a mom to a two year old little girl, and two cats. The wife to an amazing husband 
                 (who is my number 1 fan and biggest supporter, and full time social worker.
                 <br><br>
+                <img id="family-photo" src="${family.default}" alt="Meet My Family">
                 Thank you for taking the time to “meet me”. I can’t wait to be a part of your life journey!
             </p>
         </div>
