@@ -1,10 +1,20 @@
 #meet-sadie {
   display: inline-block;
   margin-bottom: 5rem;
+  font-size: 1.2rem !important;
+
+  img {
+    margin: 10px;
+  }
 
   #sadie-photo {
     float: right;
     height: 25rem;
+  }
+
+  #family-photo {
+    float: left;
+    height: 20rem;
   }
 }
 

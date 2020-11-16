@@ -34,10 +34,15 @@ const buildBookingForm = (isFullPage, id) => (`
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s12 m10">
+            <div class="input-field col s12 m5">
                 <input id="email-${id}" name="Email" type="email" class="validate" required>
                 <label for="email-${id}">Email *</label>
                 <span class="helper-text" data-error="Please enter a valid email"></span>
+            </div>
+            <div class="input-field col s12 m5">
+                <input id="phone-${id}" name="Phone" type="tel" class="validate">
+                <label for="phone-${id}">Phone Number</label>
+                <span class="helper-text" data-error="Please enter a valid phone number"></span>
             </div>
         </div>
         <div class="row">

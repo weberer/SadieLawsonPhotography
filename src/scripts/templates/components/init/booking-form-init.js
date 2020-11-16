@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const _htmlElementCollectionToArray = collection => Array.prototype.slice.call(collection);
 
-const _buildJsonData = (firstName, lastName, email, product, date, contactMethod, message, referral) => ({
+const _buildJsonData = (firstName, lastName, email, phone, product, date, contactMethod, message, referral) => ({
     "firstName": firstName,
     "lastName": lastName,
     "email": email,
+    "phone": phone,
     "product": product ? priceList.filter(item => item.id.toString() === product)[0].name : '', // Replace ID with product name
     "date": date,
     "contactMethod": contactMethod,
@@ -58,6 +59,7 @@ const _validateBookingForm = (formName, event) => {
     const firstNameInput = form.FirstName;
     const lastNameInput = form.LastName;
     const emailInput = form.Email;
+    const phoneInput = form.Phone;
     const productInput = form.Product;
     const dateInput = form.Date;
     const contactMethodInputGroup = form.ContactMethod;
@@ -75,13 +77,23 @@ const _validateBookingForm = (formName, event) => {
     isFormValid = _validateRadioGroup(contactMethodInputGroup, contactMethodParent) && isFormValid;
 
     if(isFormValid) {
-        const jsonData = _buildJsonData(firstNameInput.value, lastNameInput.value, emailInput.value, productInput.value,
+        const jsonData = _buildJsonData(firstNameInput.value, lastNameInput.value, emailInput.value, phoneInput.value, productInput.value,
             dateInput ? dateInput.value : '', contactMethodInputGroup.value, messageInput.value, referralInput.value);
 
-        console.log(jsonData);
-        //TODO: Add JSON payload generation and submission to lambda function for email/processing
-
-        form.reset();
+        fetch('https://api.sadielawsonphotography.com/sendEmailTest', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            body: JSON.stringify(jsonData),
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Api-Key': '8dkc2hLL7nRx4w1N78aL9EtZqAgXfuA4GKgOY5vi'
+            }
+        }).then(response => {
+            console.log(response);
+            form.reset();
+            alert("Your message to SadieLawsonPhotography was sent successfully");
+        });
     }
 }
 
