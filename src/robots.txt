@@ -1,0 +1,33 @@
+# Begin robots.txt file
+#/-----------------------------------------------\
+#| In single portal/domain situations, uncomment the sitmap line and enter domain name
+#\-----------------------------------------------/
+#Sitemap: https://www.sadielawsonphotography.com/sitemap.xml
+
+
+User-agent: *
+Disallow: /resources
+Disallow: /*Template.js
+Disallow: /*.jpg
+Disallow: /*.png
+
+User-agent: msnbot
+Disallow: /resources
+Disallow: /*Template.js
+Disallow: /*.jpg
+Disallow: /*.png
+Crawl-delay: 5
+
+User-agent: Googlebot
+Disallow: /resources
+Disallow: /*Template.js
+Disallow: /*.jpg
+Disallow: /*.png
+
+User-agent: Yahoo Pipes 1.0
+Disallow: /resources
+Disallow: /*Template.js
+Disallow: /*.jpg
+Disallow: /*.png
+
+# End of robots.txt file

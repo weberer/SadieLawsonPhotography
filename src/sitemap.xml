@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.sadielawsonphotography.com</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.sadielawsonphotography.com/index.html</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.sadielawsonphotography.com/investment.html</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sadielawsonphotography.com/testimonials.html</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>.05</priority>
+  </url>
+  <url>
+    <loc>https://www.sadielawsonphotography.com/contact.html</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.sadielawsonphotography.com/checkBalance.html</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://www.sadielawsonphotography.com/giftCard.html</loc>
+    <lastmod>2020-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.1</priority>
+  </url>
+</urlset>
