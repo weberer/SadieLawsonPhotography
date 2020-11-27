@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create Route53 RecordSets for the associated CloudFront Distribution'
+Resources:
+
+  WebsiteCloudFrontRecordSetGroup:
+    Type: AWS::Route53::RecordSetGroup
+    DependsOn: WebsiteDistribution
+    Properties:
+      Comment: Update Route53 CloudFront Records for the stage ${self:provider.stage}
+      HostedZoneId: ${self:custom.hosted-zone-id}
+      RecordSets:
+        - AliasTarget:
+            DNSName:
+              Fn::GetAtt: [ WebsiteDistribution, DomainName ]
+            HostedZoneId: ${self:custom.cloudFront-hosted-zone-id}
+            EvaluateTargetHealth: False
+          Name: '${self:custom.website-url.${self:provider.stage}}'
+          Type: A
+        - AliasTarget:
+            DNSName:
+              Fn::GetAtt: [ WebsiteDistribution, DomainName ]
+            HostedZoneId: ${self:custom.cloudFront-hosted-zone-id}
+            EvaluateTargetHealth: False
+          Name: '${self:custom.website-url.${self:provider.stage}}'
+          Type: AAAA
+        - AliasTarget:
+            DNSName:
+              Fn::GetAtt: [ WebsiteDistribution, DomainName ]
+            HostedZoneId: ${self:custom.cloudFront-hosted-zone-id}
+            EvaluateTargetHealth: False
+          Name: 'www.${self:custom.website-url.${self:provider.stage}}'
+          Type: A
+        - AliasTarget:
+            DNSName:
+              Fn::GetAtt: [ WebsiteDistribution, DomainName ]
+            HostedZoneId: ${self:custom.cloudFront-hosted-zone-id}
+            EvaluateTargetHealth: False
+          Name: 'www.${self:custom.website-url.${self:provider.stage}}'
+          Type: AAAA
