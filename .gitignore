@@ -106,3 +106,6 @@ dist
 .idea/
 
 _site
+
+# Serverless directories
+.serverless

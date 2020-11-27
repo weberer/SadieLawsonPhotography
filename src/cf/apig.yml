@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create Route53 RecordSets for the associated CloudFront Distribution'
+Resources:
+    SendContactRequestEmail:
+      Type: AWS::ApiGatewayV2::Api
+      Properties:
+        Name: SendContactRequest
+        Version: 1.0.0
+        ProtocolType: HTTP
+        BasePath: ignore
+        CorsConfiguration:
+          AllowCredentials: False,
+          AllowMethods:
+            - post
+        CredentialsArn: 'ARN_OF_LAMBDA_IAM'
+        DisableExecuteApiEndpoint: True
+        FailOnWarnings: True
+        Target: LambdaARN

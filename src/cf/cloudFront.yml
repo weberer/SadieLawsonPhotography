@@ -1,0 +1,98 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create Buckets for SLP Websites'
+Resources:
+
+  WebsiteDistributionCertificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: '${self:custom.website-url.prod}'
+      SubjectAlternativeNames:
+        - '*.${self:custom.website-url.prod}'
+        - '*.${self:custom.website-url.development}'
+        - '*.${self:custom.website-url.uat}'
+        - '*.dev.${self:custom.website-url.prod}'
+        - '*.prod.${self:custom.website-url.prod}'
+      DomainValidationOptions:
+        - DomainName: '${self:custom.website-url.prod}'
+          HostedZoneId: ${self:custom.hosted-zone-id}
+      ValidationMethod: DNS
+
+  WebsiteDistribution:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - WebsiteBucket
+    Properties:
+      DistributionConfig:
+        Aliases:
+          - '${self:provider.stage}.${self:custom.website-url.prod}'
+        Enabled: True
+        DefaultRootObject: '${self:custom.website-root-path}'
+        HttpVersion: 'http2'
+        IPV6Enabled: True
+        PriceClass: 'PriceClass_100'
+        DefaultCacheBehavior:
+          TargetOriginId: '${self:custom.website-bucket-name}/${self:custom.website-origin-path}'
+          ViewerProtocolPolicy: 'redirect-to-https'
+          AllowedMethods:
+            - GET
+            - HEAD
+          CachedMethods:
+            - GET
+            - HEAD
+          Compress: True
+          CachePolicyId: ${self:custom.managedCachingOptimized-cache-policy-id}
+          SmoothStreaming: False
+        Origins:
+          -
+            ConnectionAttempts: 3
+            ConnectionTimeout: 10
+            DomainName: '${self:custom.website-bucket-name}.s3.amazonaws.com'
+            Id: '${self:custom.website-bucket-name}/${self:custom.website-origin-path}'
+            OriginPath: '/${self:custom.website-origin-path}'
+            OriginShield:
+              Enabled: False
+            CustomOriginConfig:
+              HTTPPort: 80
+              HTTPSPort: 443
+              OriginKeepaliveTimeout: 5
+              OriginProtocolPolicy: 'https-only'
+              OriginReadTimeout: 30
+              OriginSSLProtocols:
+                - TLSv1.2
+        CustomErrorResponses:
+          -
+            ErrorCode: 403
+            ErrorCachingMinTTL: 10
+            ResponseCode: 403
+            ResponsePagePath: '/${self:custom.website-error-page-path}'
+          -
+            ErrorCode: 404
+            ErrorCachingMinTTL: 10
+            ResponseCode: 404
+            ResponsePagePath: '/${self:custom.website-error-page-path}'
+        Restrictions:
+          GeoRestriction:
+            RestrictionType: whitelist
+            Locations:
+              - CA
+              - MX
+              - US
+        ViewerCertificate:
+          AcmCertificateArn:
+            Ref: WebsiteDistributionCertificate
+          MinimumProtocolVersion: 'TLSv1.2_2019'
+          SslSupportMethod: 'sni-only'
+
+Outputs:
+  WebsiteDistributionDomainName:
+    Description: Domain Name for the Website Cloud Front Distribution
+    Value:
+      Fn::GetAtt: [ WebsiteDistribution, DomainName ]
+    Export:
+      Name: '#{AWS::StackName}-WebsiteDistributionDomainName'
+  WebsiteDistributionID:
+    Description: Distribution ID for the Website Cloud Front Distribution
+    Value:
+      Ref: WebsiteDistribution
+    Export:
+      Name: '#{AWS::StackName}-WebsiteDistributionID'

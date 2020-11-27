@@ -1,0 +1,43 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Create Buckets for SLP Websites'
+Resources:
+
+  WebsiteBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      AccessControl: PublicRead
+      BucketName: ${self:custom.website-bucket-name}
+      VersioningConfiguration:
+        Status: Enabled
+      WebsiteConfiguration:
+        IndexDocument: '${self:custom.website-root-path}'
+        ErrorDocument: '${self:custom.website-origin-path}/${self:custom.website-error-page-path}'
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: False
+        BlockPublicPolicy: False
+        IgnorePublicAcls: False
+        RestrictPublicBuckets: False
+
+  WebsiteBucketPolicy:
+    Type: 'AWS::S3::BucketPolicy'
+    Properties:
+      Bucket:
+        Ref: WebsiteBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          -
+            Effect: Allow
+            Principal: '*'
+            Action:
+              - 's3:GetObject'
+            Resource:
+              - Fn::Join: ['/', [Fn::GetAtt: [WebsiteBucket, Arn], '${self:custom.website-origin-path}/*']]
+
+Outputs:
+  WebsiteBucketArn:
+    Description: Arn of the bucket responsible for hosting a static website
+    Value:
+      Fn::GetAtt: [WebsiteBucket, Arn]
+    Export:
+      Name: '#{AWS::StackName}-WebsiteBucketArn'
