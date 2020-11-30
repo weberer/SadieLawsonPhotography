@@ -9,6 +9,6 @@ const _PAGE_SUBTITLE = `<div class="row">
 </div>`;
 
 export default () => `${getHeader(getPageName(PAGE_IDS.CONTACT), _PAGE_SUBTITLE)}
-        <div class="section white row">
-            ${getBookingForm(true, 0)}
+    <div class="section white row">
+        ${getBookingForm(true, 0)}
     </div>`;
