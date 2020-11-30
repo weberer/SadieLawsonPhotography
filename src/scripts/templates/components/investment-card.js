@@ -11,7 +11,7 @@ const _buildListColumn = item => `<ul class="col s12 l5">
     </ul>`;
 
 export default data => `
-    <div class="col s12">
+    <div class="col s12" id="${data.key}">
         <div class="card price-card-2">
             <div class="card-content">
                 <div class="card-title-row">

@@ -11,7 +11,7 @@ const _getDatePicker = () => `
 <label class="active">Preferred Date *</label>
 <span class="helper-text" data-error="Please choose a valid date"></span>`;
 
-const _getProductSelect = (id, selectedId) => `<select id="product-select-${id}" name="Product" class="browser-default ${selectedId !== undefined ? 'hidden" disabled' : '"'}>
+const _getProductSelect = (id, selectedId) => `<select id="product-select-${id}" name="Product" tabindex="0" class="browser-default ${selectedId !== undefined ? 'hidden" disabled' : '"'}>
     <option value disabled ${selectedId === undefined ? 'selected' : ''}>Select Option</option>
         ${_buildOptions(selectedId)}
     <option value="other">Other</option>
@@ -50,7 +50,7 @@ const buildBookingForm = (isFullPage, id) => (`
                 ${(isFullPage ? _getProductSelect(id) : _getProductSelect(id, id) + _getDatePicker())}
             </div>
             <div class="input-field col s12 m6">
-                <div id="contact-method-${id}" class="radio-button-group" data-error="Please select a contact method">
+                <div id="contact-method-${id}" class="radio-button-group" tabindex="0" data-error="Please select a contact method">
                     <input type="radio" id="radio-email-${id}" value="email" name="ContactMethod">
                     <label for="radio-email-${id}">Email</label>
                     <input type="radio" id="radio-text-${id}" value="text" name="ContactMethod">

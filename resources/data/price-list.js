@@ -19,6 +19,7 @@ export default [
   {
     id: 1,
     name: 'Weddings',
+    key: "wedding",
     subtitle: '2, 4, 6 and 8 Hour Options Available',
     price: _formatPrice('Starting at $200'),
     included: [
@@ -57,6 +58,7 @@ export default [
   {
     id: 3,
     name: 'Engagement Session',
+    key: "engagement",
     subtitle: '1 Hour Shoot',
     price: _formatPrice('Starting at $100'),
     included: [
@@ -76,6 +78,7 @@ export default [
   {
     id: 4,
     name: 'Family Portrait',
+    key: "family",
     subtitle: '30 Minute Shoot',
     price: _formatPrice('Starting at $100'),
     included: [
@@ -98,6 +101,7 @@ export default [
   {
     id: 5,
     name: 'Senior Portrait',
+    key: 'senior',
     subtitle: "It's finally here, senior year!! Let me help you remember this life milestone",
     price: _formatPrice('Starting at $150'),
     included: [
@@ -119,6 +123,7 @@ export default [
   {
     id: 6,
     name: "Professional Headshots",
+    key: 'headshot',
     price: _formatPrice('Starting at $50'),
     description: `Professional Headshot Sessions typically last between 15 and 30 minutes depending on your needs.<br>
     Group pricing options available. Please contact Sadie Lawson Photography for a quote.`,
@@ -141,6 +146,7 @@ export default [
   {
     id: 7,
     name: 'Cherish the Gift of Life Package',
+    key: 'gift+of+life',
     price: _formatPrice('Starting at $400'),
     notification: '$100 in Savings',
     description: `Cherish the gift of your child with this amazing offer 
@@ -152,6 +158,7 @@ export default [
   {
     id: 8,
     name: 'Maternity',
+    key: 'maternity',
     subtitle: '45 Minute Sessions',
     price: _formatPrice('Starting at $150'),
     included: [
@@ -170,6 +177,7 @@ export default [
   },
   { id: 9,
     name: 'Newborn',
+    key: 'newborn',
     subtitle: `2-3 Hour Session*`,
     price: _formatPrice('Starting at $200'),
     included: [
@@ -189,6 +197,7 @@ export default [
   {
     id: 10,
     name: "Life's Milestones",
+    key: 'milestone',
     subtitle: '1 hour Sessions',
     price: _formatPrice('Starting at $150'),
     description: `It is amazing how fast children grow! Capture the precious moments of your child's first years of life 
