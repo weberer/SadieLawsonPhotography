@@ -2,12 +2,23 @@
 
 ### TODO
 
+#### Business TODO
+
++ Create Instagram
++ Create SLP Pinterest
++ Clarification on Elopement Wedding Removal
++ Work to create description for each session.
+  - Things to include:
+      + What to wear
+      + Things to bring (props, etc)
++ Section for Best-Friend-Shoot (Same as Family, but giving it a name can be helpful)
++ Page to show off her work, so she can take clients photos off of Pixieset
++ Update contracts to reflect removal of gallery from Pixieset and charge for image recovery
++ Finish creating contract templates on Square
+
 #### Website
 
-- Add toasts to confirm contact request sent
-- Look into dynamic generation/addition or 'resources' for testimonials page
-- Remove Instagram link
-- Add buttons @ top of investment page for gift card purchase
+- Add toasts to confirm contact request sent or failure
 
 #### AWS
 
