@@ -6,6 +6,13 @@ import * as url from '../../resources/brandResources/favicon.png';
 import initHeader from './templates/components/init/header-init';
 import M from "materialize-css";
 
+const _clearModalForms = modalEl => {
+    const forms = modalEl.getElementsByTagName('form')
+    for(const form of forms) {
+        form.reset();
+    }
+}
+
 initHeader();
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -13,7 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Materialbox.init(elements, {});
 
     const modals = document.querySelectorAll('.modal');
-    M.Modal.init(modals, {});
+    M.Modal.init(modals, {
+        "onCloseEnd": _clearModalForms
+    });
 
     const tooltips = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(tooltips, {});

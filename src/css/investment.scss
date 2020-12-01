@@ -18,9 +18,38 @@
 
   ul {
     margin-top: 0;
+    margin-bottom: 0;
+
     li {
       margin-left: 1.5rem;
       color: $primary-accent-color;
+
+      strong {
+        font-weight: 600;
+      }
+
+      &::before {
+        content: "camera_alt";
+        font-family: "Material Icons";
+        color: $secondary-color;
+        position: relative;
+        top: .3rem;
+        margin-right: .3rem;
+      }
+    }
+  }
+
+  div.row.card-list-header {
+    display: flex;
+    margin: 0;
+
+    h6 + span {
+      flex: 1;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $primary-color;
+      margin-top: 1.4rem;
+      margin-left: 1rem;
     }
   }
 

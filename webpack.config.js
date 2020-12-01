@@ -1,6 +1,7 @@
 const path = require('path');
 const buildPath = path.resolve(__dirname, 'dist');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPrerenderPlugin = require('html-webpack-prerender-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -10,25 +11,30 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = {
     // https://webpack.js.org/concepts/entry-points/#multi-page-application
     entry: {
-        main: './src/scripts/main.js',
-        index: './src/scripts/index.js',
-        prices: './src/scripts/investment.js',
         contact: './src/scripts/contact.js',
-        about: './src/scripts/testimonials.js',
-        indexTemplate: './src/scripts/templates/index.js',
-        pricesTemplate: './src/scripts/templates/investment.js',
+        error: './src/scripts/error.js',
+        index: './src/scripts/index.js',
+        main: './src/scripts/main.js',
+        investment: './src/scripts/investment.js',
+        testimonials: './src/scripts/testimonials.js',
+        giftCards: './src/scripts/giftCards.js',
+
         contactTemplate: './src/scripts/templates/contact.js',
-        aboutTemplate: './src/scripts/templates/testimonials.js',
+        errorTemplate: './src/scripts/templates/error.js',
+        indexTemplate: './src/scripts/templates/index.js',
+        investmentTemplate: './src/scripts/templates/investment.js',
+        testimonialsTemplate: './src/scripts/templates/testimonials.js',
+
         headerTemplate: './src/scripts/templates/components/header.js',
-        footerTemplate: './src/scripts/templates/components/footer.js',
-        pricesCardTemplate: './src/scripts/templates/prices_cards.js'
+        footerTemplate: './src/scripts/templates/components/footer.js'
     },
 
     // how to write the compiled files to disk
     // https://webpack.js.org/concepts/output/
     output: {
         filename: '[name].[hash:20].js',
-        path: buildPath
+        path: buildPath,
+        libraryTarget: 'umd'
     },
 
     // https://webpack.js.org/concepts/loaders/
@@ -43,7 +49,13 @@ module.exports = {
                     // Translates CSS into CommonJS
                     'css-loader',
                     // Compiles Sass to CSS
-                    'sass-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            // Prefer `dart-sass`
+                            implementation: require('sass'),
+                        }
+                    }
                 ],
             },
             {
@@ -70,6 +82,20 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
+            template: './src/html/contact.html',
+            inject: 'head',
+            excludeChunks: ['contactTemplate'],
+            chunks: ['main', 'contact'],
+            filename: 'contact.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/error.html',
+            inject: 'head',
+            excludeChunks: ['errorTemplate'],
+            chunks: ['main', 'error'],
+            filename: 'error.html'
+        }),
+        new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'head',
             excludeChunks: ['indexTemplate'],
@@ -79,50 +105,64 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/html/investment.html',
             inject: 'head',
-            excludeChunks: ['pricesTemplate'],
-            chunks: ['main', 'prices'],
-            filename: 'prices.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/html/contact.html',
-            inject: 'head',
-            excludeChunks: ['contactTemplate'],
-            chunks: ['main', 'contact'],
-            filename: 'contact.html'
+            excludeChunks: ['investmentTemplate'],
+            chunks: ['main', 'investment'],
+            filename: 'investment.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/testimonials.html',
             inject: 'head',
-            excludeChunks: ['aboutTemplate'],
-            chunks: ['main', 'about'],
-            filename: 'about.html'
+            excludeChunks: ['testimonialsTemplate'],
+            chunks: ['main', 'testimonials'],
+            filename: 'testimonials.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/giftCard.html',
+            inject: 'head',
+            chunks: ['main', 'giftCards'],
+            filename: 'giftCard.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/html/checkBalance.html',
+            inject: 'head',
+            chunks: ['main', 'giftCards'],
+            filename: 'checkBalance.html'
         }),
         new HtmlWebpackPrerenderPlugin({
-            'index.html': {
-                indexTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
-            },
-            'prices.html': {
-                pricesTemplate: '#slp-main',
-                pricesCardTemplate: '#slp-main-cards',
-                headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
-            },
             'contact.html': {
                 contactTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
-            'about.html': {
-                aboutTemplate: '#slp-main',
+            'error.html': {
+                errorTemplate: '#slp-main'
+            },
+            'index.html': {
+                indexTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer'
             },
+            'investment.html': {
+                investmentTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            },
+            'testimonials.html': {
+                testimonialsTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer'
+            }
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css",
-            chunkFilename: "[id].[contenthash].css"
+            filename: "[name].[hash:20].css",
+            chunkFilename: "[id].[hash:20].css"
+        }),
+        new CopyPlugin({
+            patterns: [
+                'src/sitemap.xml',
+                'src/robots.txt',
+                {from: 'resources/photos', to: 'resources/photos'}
+            ]
         })
     ],
 
@@ -133,7 +173,7 @@ module.exports = {
             new TerserPlugin({
                 cache: true,
                 parallel: true,
-                sourceMap: true
+                sourceMap: false
             }),
             new OptimizeCssAssetsPlugin({})
         ]
