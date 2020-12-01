@@ -1,6 +1,7 @@
 const path = require('path');
 const buildPath = path.resolve(__dirname, 'dist');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPrerenderPlugin = require('html-webpack-prerender-plugin');
 
@@ -143,5 +144,12 @@ module.exports = {
                 footerTemplate: '#slp-footer'
             }
         }),
+        new CopyPlugin({
+            patterns: [
+                'src/sitemap.xml',
+                'src/robots.txt',
+                {from: 'resources/photos', to: 'resources/photos'}
+            ]
+        })
     ]
 };

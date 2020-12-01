@@ -1,7 +1,7 @@
 {
   "name": "sadielawsonphotography",
   "version": "0.0.1",
-  "description": "Website for Sadie Lawson Photography",
+  "description": "Website and associated AWS resources for Sadie Lawson Photography",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "serve:webpack": "webpack --config webpack.dev.js --mode development --watch",
     "serve": "npm-run-all clean --parallel serve:*",
-    "build:webpack": "webpack --config webpack.dev.js --mode production",
+    "build:webpack": "webpack --config webpack.config.js --mode production",
     "build": "run-s clean build:*"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "aws-sdk": "^2.799.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.3.2",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",

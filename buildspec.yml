@@ -11,6 +11,8 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo removing old dist folder from S3
+      - aws s3 rm --recursive "s3://${S3_BUCKET}/dist"
       - echo Compiling the dist folder
       - npm run-script build
   post_build:
@@ -19,6 +21,5 @@ phases:
 # Include only the files required for your application to run.
 artifacts:
   files:
-    - -resources/**/*
     - dist/**/*
     - node_modules/**/*

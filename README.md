@@ -19,6 +19,7 @@
 #### Website
 
 - Add toasts to confirm contact request sent or failure
+- Fix build step w/ webpack.config.js not working
 
 #### AWS
 

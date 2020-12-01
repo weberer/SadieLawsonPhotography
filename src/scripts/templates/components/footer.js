@@ -1,5 +1,5 @@
 import contactInfo from '../../../../resources/data/contact-info';
-//import * as instagramUrl from '../../../../resources/photos/instagram.png';
+import * as instagramUrl from '../../../../resources/photos/instagram.png';
 import * as pixisetUrl from '../../../../resources/photos/pixiset.png';
 
 const footerHTML = `<footer class="page-footer">
