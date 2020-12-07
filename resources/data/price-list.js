@@ -1,21 +1,19 @@
-//const _PHOTO_DIR = '../resources/photos/';
 const _formatPrice = price => `&mdash;${price}&mdash;`
 const _mileageStatement = '* Mileage is calculated as one-way travel';
 
 export default [
-/*    {
+  {
     id: 0,
-    name: 'Hot CoCo  Mini-Session',
-    subtitle: 'November 7th 8th 3:00pm - 5:30pm',
+    name: 'Hot Cocoa  Mini Sessions',
+    key: "coco",
+    subtitle: "December 20th 2020 &mdash; 2:00pm - 4:00pm",
+    price: _formatPrice('$50'),
     notification: 'Limited Spots Available',
-    price: '&mdash;$50&mdash;',
-    description: 'Join me at Traditions Christmas Tree Farm for my 2020 Holiday mini sessions. Each session is designed ' +
-        'to give you and yours time to have fun, laugh and make memories to treasure for a lifetime.<br><br>' +
-        'Sessions will be 25 minutes long and come with 7 professionally edited photos. All this is yours for the cost of $50.',
-//    image: _PHOTO_DIR  + 'winter-mini/winter-mini-1 - Copy.jpg',
-    ticketLink: 'https://www.eventbrite.com/e/2020-holiday-mini-sessions-tickets-122913907807',
-//    largeWidth: '8'
-  },*/
+    description: `It’s that time of year again! Grab a blanket and snuggle up with a big cup of hot cocoa!<br>
+    Join me at Schreiner Park in Lancaster for an amazing photo shoot for the whole family. Sessions are 15 minutes long.
+    The list of open spots can be found on the Eventbrite site by clicking the 'Request a Session' icon above.`,
+    ticketLink: 'https://www.eventbrite.com/e/131419576491/',
+  },
   {
     id: 1,
     name: 'Weddings',
@@ -38,23 +36,19 @@ export default [
     ],
     finePrint: _mileageStatement
   },
-  /*{
-    id: 2,
-    name: 'Elopement Weddings',
-    subtitle: '6 Hours',
-    price: '&mdash;Starting at $300&mdash;',
-    description: `Elopement Wedding Packages Include Everything From the Standard Wedding Package, Plus:
-    <ul>
-      <li>Extra 2 Hours</li>
-      <li>50% Discount</li>
-      <li>20 Miles of Photographer Travel*</li>
-    </ul>
-    <span class="primary-accent-text">Optional Add-Ons:</span>
-    <ul>
-      <li>Extended Travel Distance - Calculated Per Mile</li>
-    </ul>
-    <span class="text-small primary-accent-text">* Mileage is calculated as one-way travel</span>`,
-  },*/
+  {
+      id: 2,
+      name: 'Elopement Weddings',
+      key: 'elopement',
+      subtitle: '6 Hours',
+      price: _formatPrice('Starting at $300'),
+      included: [
+          "<strong>Everything</strong> from the Wedding",
+          "Extra 4 Hours for 50% off",
+          "Additional 10 Miles of Photographer Travel*"
+      ],
+      finePrint: _mileageStatement
+  },
   {
     id: 3,
     name: 'Engagement Session',
@@ -77,7 +71,7 @@ export default [
   },
   {
     id: 4,
-    name: 'Family Portrait',
+    name: 'Family, Friends and Individual Portraits',
     key: "family",
     subtitle: '30 Minute Shoot',
     price: _formatPrice('Starting at $100'),
