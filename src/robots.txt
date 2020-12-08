@@ -10,12 +10,15 @@ Disallow: /resources
 Disallow: /*Template.js
 Disallow: /*.jpg
 Disallow: /*.png
+Disallow: /*giftCard.html
+Disallow: /*checkBalance.html
 
 User-agent: msnbot
 Disallow: /resources
 Disallow: /*Template.js
 Disallow: /*.jpg
 Disallow: /*.png
+Disallow: /*checkBalance.html
 Crawl-delay: 5
 
 User-agent: Googlebot
@@ -23,11 +26,13 @@ Disallow: /resources
 Disallow: /*Template.js
 Disallow: /*.jpg
 Disallow: /*.png
+Disallow: /*checkBalance.html
 
 User-agent: Yahoo Pipes 1.0
 Disallow: /resources
 Disallow: /*Template.js
 Disallow: /*.jpg
 Disallow: /*.png
+Disallow: /*checkBalance.html
 
 # End of robots.txt file
