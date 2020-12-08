@@ -44,7 +44,6 @@ export default [
       price: _formatPrice('Starting at $300'),
       included: [
           "<strong>Everything</strong> from the Wedding",
-          "Extra 4 Hours for 50% off",
           "Additional 10 Miles of Photographer Travel*"
       ],
       finePrint: _mileageStatement
@@ -75,6 +74,10 @@ export default [
     key: "family",
     subtitle: '30 Minute Shoot',
     price: _formatPrice('Starting at $100'),
+    description: `"The love of family and friends is the glue that holds your heart together." - Jennifer Betts
+    <br><br>
+    Capture what makes your family, relationship or friendship special. This session is perfect for families large and 
+    small, couples, friends and even individuals looking to capture those special moments.`,
     included: [
         "10+ Curated and Edited Photos",
         "Up to 4 Family Members (Not Including Pets)",
