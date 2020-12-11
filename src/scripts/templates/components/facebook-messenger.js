@@ -19,7 +19,7 @@ export default () => `<div id="fb-root"></div>
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id="103120284452624"
-     theme_color="#feedea"
+     theme_color="#d2b1ab"
      logged_in_greeting="Hi, Thanks for reaching out to Sadie Lawson Photography! How can I help you?"
      logged_out_greeting="Hi, Thanks for reaching out to Sadie Lawson Photography! How can I help you?">
 </div>`
