@@ -22,7 +22,8 @@ module.exports = {
         testimonialsTemplate: './src/scripts/templates/testimonials.js',
 
         headerTemplate: './src/scripts/templates/components/header.js',
-        footerTemplate: './src/scripts/templates/components/footer.js'
+        footerTemplate: './src/scripts/templates/components/footer.js',
+        messengerTemplate: './src/scripts/templates/components/facebook-messenger.js'
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -123,7 +124,8 @@ module.exports = {
             'contact.html': {
                 contactTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
+                footerTemplate: '#slp-footer',
+                messengerTemplate: '#facebook-messenger'
             },
             'error.html': {
                 errorTemplate: '#slp-main'
@@ -131,17 +133,20 @@ module.exports = {
             'index.html': {
                 indexTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
+                footerTemplate: '#slp-footer',
+                messengerTemplate: '#facebook-messenger'
             },
             'investment.html': {
                 investmentTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
+                footerTemplate: '#slp-footer',
+                messengerTemplate: '#facebook-messenger'
             },
             'testimonials.html': {
                 testimonialsTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
-                footerTemplate: '#slp-footer'
+                footerTemplate: '#slp-footer',
+                messengerTemplate: '#facebook-messenger'
             }
         }),
         new CopyPlugin({
