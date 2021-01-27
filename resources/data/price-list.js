@@ -1,8 +1,9 @@
 const _formatPrice = price => `&mdash;${price}&mdash;`
 const _mileageStatement = '* Mileage is calculated as one-way travel';
 
-export default [
-  {
+//export default [
+export const priceList = [
+  /*{
     id: 0,
     name: 'Hot Cocoa  Mini Sessions',
     key: "coco",
@@ -13,7 +14,9 @@ export default [
     Join me at Schreiner Park in Lancaster for an amazing photo shoot for the whole family. Sessions are 15 minutes long.
     The list of open spots can be found on the Eventbrite site by clicking the 'Request a Session' icon above.`,
     ticketLink: 'https://www.eventbrite.com/e/131419576491/',
-  },
+    startDate: ''.
+    endDate: ''
+  },*/
   {
     id: 1,
     name: 'Weddings',
@@ -216,3 +219,107 @@ export default [
     finePrint: _mileageStatement
   }
 ];
+
+export const weddingPackages = [
+    {
+        name: 'Silver Package',
+        key: 'silver',
+        price: _formatPrice("$200"),
+        description: "",
+        included: [
+            "2 Hours of Photographer Time",
+            "25 Curated and Edited Photos",
+            "20 Miles of Photographer Travel*",
+            "Digital Gallery",
+            "Print Rights"
+        ]
+    },
+    {
+        name: 'Gold Package',
+        key: 'gold',
+        price: _formatPrice("$400"),
+        description: "",
+        included: [
+            "Everything From the Silver Package",
+            "4 Hours Total of Photographer Time",
+            "50 Total Curated and Edited Photos",
+            "Customized Flash Drive"
+        ]
+    },
+    {
+        name: 'Platinum Package',
+        key: 'platinum',
+        price: _formatPrice("$600"),
+        description: "",
+        included: [
+            "Everything From the Gold Package",
+            "6 Hours Total of Photographer Time",
+            "Complementary Engagement Session or 10 Additional Photos"
+        ]
+    },
+    {
+        name: 'Diamond Package',
+        key: 'diamond',
+        price: _formatPrice("$1,000"),
+        description: "",
+        included: [
+            "Everything From the Gold Package",
+            "8 Hours Total of Photographer Time",
+            "100 Total Curated and Edited Photos",
+            "Optional Second Shooter",
+            "Reception Video Testimonial"
+        ]
+    },
+    {
+        name: 'Elopement Package',
+        key: 'elopement',
+        price: _formatPrice("300"),
+        description: "",
+        included: [
+            "Everything From the Gold Package",
+            "6 Hours Total of Photographer Time",
+            "40 Miles Total of Photographer Travel*",
+            "Maximum of 10 Guests"
+        ]
+    }
+];
+
+export const weddingAddOns = [
+    {
+        name: "Additional Travel Distance",
+        key: "mileage",
+        price: "$10 per 10 Miles (calculated as one-way travel)",
+        description: ""
+    },
+    {
+        name: "Additional Photos",
+        key: "additional",
+        price: "$50 per 50 Photos",
+        description: ""
+    },
+    {
+        name: "Unlimited Photos",
+        key: "unlimited",
+        price: "$200",
+        description: ""
+    },
+    {
+        name: "Wedding Adventure Shoot",
+        key: "adventure",
+        price: "200",
+        description: ""
+    },
+    {
+        name: "Reception Video Testimonial",
+        key: "testimonial",
+        price: "$100",
+        description: ""
+    },
+    {
+        name: "Additional Flash Drives",
+        key: "flashdrive",
+        price: "25",
+        description: ""
+    }
+];
+

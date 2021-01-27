@@ -1,6 +1,6 @@
 const path = require('path');
 const buildPath = path.resolve(__dirname, 'dist');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPrerenderPlugin = require('html-webpack-prerender-plugin');
@@ -15,15 +15,20 @@ module.exports = {
         testimonials: './src/scripts/testimonials.js',
         giftCards: './src/scripts/giftCards.js',
 
+        weddings: './src/scripts/weddings.js',
+
         contactTemplate: './src/scripts/templates/contact.js',
         errorTemplate: './src/scripts/templates/error.js',
         indexTemplate: './src/scripts/templates/index.js',
         investmentTemplate: './src/scripts/templates/investment.js',
         testimonialsTemplate: './src/scripts/templates/testimonials.js',
 
+        weddingsTemplate: './src/scripts/templates/weddings.js',
+
         headerTemplate: './src/scripts/templates/components/header.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
         messengerTemplate: './src/scripts/templates/components/facebook-messenger.js'
+
     },
     mode: 'development',
     devtool: 'inline-source-map',
@@ -91,7 +96,7 @@ module.exports = {
             template: './src/html/index.html',
             inject: 'head',
             excludeChunks: ['indexTemplate'],
-            chunks:  ['main', 'index'],
+            chunks: ['main', 'index'],
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
@@ -120,6 +125,12 @@ module.exports = {
             chunks: ['main', 'giftCards'],
             filename: 'checkBalance.html'
         }),
+        new HtmlWebpackPlugin({
+            template: './src/html/weddings.html',
+            inject: 'head',
+            chunks: ['main', 'weddings'],
+            filename: 'weddings.html'
+        }),
         new HtmlWebpackPrerenderPlugin({
             'contact.html': {
                 contactTemplate: '#slp-main',
@@ -144,6 +155,12 @@ module.exports = {
             },
             'testimonials.html': {
                 testimonialsTemplate: '#slp-main',
+                headerTemplate: '#slp-header',
+                footerTemplate: '#slp-footer',
+                messengerTemplate: '#facebook-messenger'
+            },
+            'weddings.html': {
+                weddingsTemplate: '#slp-main',
                 headerTemplate: '#slp-header',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'

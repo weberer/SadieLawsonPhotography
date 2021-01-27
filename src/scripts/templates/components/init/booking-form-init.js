@@ -1,4 +1,4 @@
-import priceList from '../../../../../resources/data/price-list';
+import { priceList } from '../../../../../resources/data/price-list';
 
 document.addEventListener('DOMContentLoaded', function() {
     const textAreas = document.querySelectorAll('textarea#message');

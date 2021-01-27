@@ -1,4 +1,4 @@
-import priceList from '../../../resources/data/price-list';
+import { priceList } from '../../../resources/data/price-list';
 import contactInfo from '../../../resources/data/contact-info';
 import getHeader from './components/paralax-header';
 import buildCard from './components/investment-card';

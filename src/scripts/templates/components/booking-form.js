@@ -1,4 +1,4 @@
-import priceList from '../../../../resources/data/price-list';
+import { priceList } from '../../../../resources/data/price-list';
 
 const _buildOption = (data, selectedId) => `<option value="${data.id}" ${selectedId === data.id ? 'selected' : ''}>${data.name}</option>`;
 
