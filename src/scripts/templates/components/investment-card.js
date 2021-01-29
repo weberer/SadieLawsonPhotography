@@ -6,12 +6,14 @@ const _hasTicketLink = data => data.ticketLink;
 
 const _getEventButtonHref = data =>  _hasTicketLink(data) ? data.ticketLink + `" target="_blank` : `#price-card-modal_${data.id}`;
 
+const _getHiddenClass = data => data.startDate && data.endDate ? 'hidden' : '';
+
 const _buildListColumn = item => `<ul class="col s12 l5">
         ${item.map(item => `<li>${item}</li>`).reduce((prev, current) => prev + current, '')}
     </ul>`;
 
 export default data => `
-    <div class="col s12" id="${data.key}">
+    <div class="col s12 ${_getHiddenClass(data)}" id="${data.key}" startDate="${data.startDate}" endDate="${data.endDate}">
         <div class="card price-card-2">
             <div class="card-content">
                 <div class="card-title-row">

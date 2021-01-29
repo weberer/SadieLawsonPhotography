@@ -1,7 +1,6 @@
 const _formatPrice = price => `&mdash;${price}&mdash;`
 const _mileageStatement = '* Mileage is calculated as one-way travel';
 
-//export default [
 export const priceList = [
   /*{
     id: 0,
@@ -14,8 +13,8 @@ export const priceList = [
     Join me at Schreiner Park in Lancaster for an amazing photo shoot for the whole family. Sessions are 15 minutes long.
     The list of open spots can be found on the Eventbrite site by clicking the 'Request a Session' icon above.`,
     ticketLink: 'https://www.eventbrite.com/e/131419576491/',
-    startDate: ''.
-    endDate: ''
+    startDate: '12-01-2020',
+    endDate: '12-20-2020'
   },*/
   {
     id: 1,
@@ -23,6 +22,7 @@ export const priceList = [
     key: "wedding",
     subtitle: '2, 4, 6 and 8 Hour Options Available',
     price: _formatPrice('Starting at $200'),
+    description: '<a href="" class="btn-large waves-effect waves-light">Hello World</a>',
     included: [
         "50 Curated and Edited Photos",
         "2 Hours of Photographer Time",
