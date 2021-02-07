@@ -2,7 +2,7 @@ const _formatPrice = price => `&mdash;${price}&mdash;`
 const _mileageStatement = '* Mileage is calculated as one-way travel';
 
 export const priceList = [
-  /*{
+  {
     id: 0,
     name: 'Hot Cocoa  Mini Sessions',
     key: "coco",
@@ -15,15 +15,18 @@ export const priceList = [
     ticketLink: 'https://www.eventbrite.com/e/131419576491/',
     startDate: '12-01-2020',
     endDate: '12-20-2020'
-  },*/
+  },
   {
     id: 1,
     name: 'Weddings',
     key: "wedding",
     subtitle: '2, 4, 6 and 8 Hour Options Available',
-    price: _formatPrice('Starting at $200'),
-    description: '<a href="" class="btn-large waves-effect waves-light">Hello World</a>',
-    included: [
+    price: _formatPrice('Packages Starting at $200'),
+    description: `<a href="" class="btn waves-effect waves-light">Hello World</a>
+      <a href="" class="btn waves-effect waves-light">Silver Package</a>
+      <a href="" class="btn waves-effect waves-light">Platinum Package</a>
+    `,
+    /*included: [
         "50 Curated and Edited Photos",
         "2 Hours of Photographer Time",
         "Complementary Engagement Session <strong>OR</strong> 10 Additional Photos",
@@ -37,7 +40,7 @@ export const priceList = [
         "Additional Time - $200 per 2 Hours",
         "Extended Travel Distance - $10 per 10 Miles*"
     ],
-    finePrint: _mileageStatement
+    finePrint: _mileageStatement*/
   },
   {
       id: 2,

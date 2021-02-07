@@ -1,2 +1,2 @@
 import '../css/weddings.scss';
-//import './templates/components/init/testimonial-init';
+import './templates/components/init/investment-card-init';
