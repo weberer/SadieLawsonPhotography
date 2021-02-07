@@ -36,8 +36,8 @@ Resources:
       Runtime: nodejs12.x
       Environment:
         Variables:
-          RECIPIENT_EMAIL_ADDRESS: eric@sadielawsonphotography.com
-          SOURCE_EMAIL_ADDRESS: sadie@sadielawsonphotography.com
+          RECIPIENT_EMAIL_ADDRESS: sadielawsonphotography@gmail.com
+          SOURCE_EMAIL_ADDRESS: booking@sadielawsonphotography.com
       Events:
         HelloWorld:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api

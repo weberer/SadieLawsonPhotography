@@ -1,9 +1,6 @@
 "use strict";
 
-var AWS = require('aws-sdk');
-
-console.log("AWS Lambda SES Forwarder // @arithmetric // Version 5.0.0");
-
+const AWS = require('aws-sdk');
 // Configure the S3 bucket and key prefix for stored raw emails, and the
 // mapping of email addresses to forward from and to.
 //
