@@ -1,4 +1,4 @@
-@import "../media-queries";
+//@import "../media-queries";
 
 .testimonials {
   .testimonial {
@@ -40,18 +40,18 @@
     }
   }
 
-  @media #{$small-and-down} {
-    .testimonial {
-      display: block;
-
-      .testimonial-img-container {
-        display: inline;
-      }
-
-      .testimonial-text {
-        left: unset !important;
-        top: 0 !important;
-      }
-    }
-  }
+  //@media #{$small-and-down} {
+  //  .testimonial {
+  //    display: block;
+  //
+  //    .testimonial-img-container {
+  //      display: inline;
+  //    }
+  //
+  //    .testimonial-text {
+  //      left: unset !important;
+  //      top: 0 !important;
+  //    }
+  //  }
+  //}
 }

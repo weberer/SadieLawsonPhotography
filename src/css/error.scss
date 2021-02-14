@@ -1,5 +1,9 @@
-@import './slp-colors';
-@import './media-queries';
+@import "./materalize/media-queries";
+@import "./materalize/variables";
+@import './materalize/typography';
+@import "./materalize/global";
+@import "./materalize/buttons";
+@import "./materalize/grid";
 
 img {
   width: 100%;

@@ -1,8 +1,6 @@
 import * as logo from '../../../resources/brandResources/sadie.png';
 import * as cameraSvg from '../../../resources/icons/camera.svg';
 
-console.log("Error.html");
-
 export default () => `<div class="container">
     <div class="row"><img class="s8 offset-s2 col m4 offset-m4" src="${logo.default}" alt="SadieLawsonPhotography"></div>
     <h4 class="row primary-text-dark center">404 Not Found :(</h4>

@@ -84,14 +84,14 @@ module.exports = {
             excludeChunks: ['contactTemplate'],
             chunks: ['main', 'contact'],
             filename: 'contact.html'
-        }),
+        }),*/
         new HtmlWebpackPlugin({
             template: './src/html/error.html',
             inject: 'head',
             excludeChunks: ['errorTemplate'],
-            chunks: ['main', 'error'],
+            chunks: ['error'],
             filename: 'error.html'
-        }),*/
+        }),
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'head',
@@ -105,7 +105,7 @@ module.exports = {
             excludeChunks: ['investmentTemplate'],
             chunks: ['main', 'investment'],
             filename: 'investment.html'
-        }),
+        }),*/
         new HtmlWebpackPlugin({
             template: './src/html/testimonials.html',
             inject: 'head',
@@ -116,15 +116,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/html/giftCard.html',
             inject: 'head',
-            chunks: ['main', 'giftCards'],
+            chunks: ['giftCards'],
             filename: 'giftCard.html'
         }),
         new HtmlWebpackPlugin({
             template: './src/html/checkBalance.html',
             inject: 'head',
-            chunks: ['main', 'giftCards'],
+            chunks: ['giftCards'],
             filename: 'checkBalance.html'
-        }),
+        }),/*
         new HtmlWebpackPlugin({
             template: './src/html/weddings.html',
             inject: 'head',
@@ -137,10 +137,10 @@ module.exports = {
                 headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
-            },
+            },*/
             'error.html': {
                 errorTemplate: '#slp-main'
-            },*/
+            },
             'index.html': {
                 indexTemplate: '#slp-main',
                 headerTemplate: '#slp-nav',
@@ -152,13 +152,13 @@ module.exports = {
                 headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
-            },
+            },*/
             'testimonials.html': {
                 testimonialsTemplate: '#slp-main',
                 headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
-            },
+            },/*
             'weddings.html': {
                 weddingsTemplate: '#slp-main',
                 headerTemplate: '#slp-nav',
