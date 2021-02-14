@@ -1,6 +1,6 @@
 import { priceList } from '../../../resources/data/price-list';
 import contactInfo from '../../../resources/data/contact-info';
-import getHeader from './components/paralax-header';
+import getHeader from './components/header';
 import buildCard from './components/investment-card';
 import {PAGE_IDS, getPageName} from "../../../resources/data/site-pages";
 

@@ -1,9 +1,9 @@
-import 'materialize-loader!../../materialize.config';
+import './materialize/materialize';
 import '../css/main.scss';
-import './templates/components/init/footer-init'
-import './templates/components/init/paralax-header-init';
 import * as url from '../../resources/brandResources/favicon.png';
-import initHeader from './templates/components/init/header-init';
+import initNav from './templates/components/init/nav-init';
+
+/*import 'materialize-loader!../../materialize.config';
 import M from "materialize-css";
 
 const _clearModalForms = modalEl => {
@@ -12,8 +12,6 @@ const _clearModalForms = modalEl => {
         form.reset();
     }
 }
-
-initHeader();
 
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.materialboxed');
@@ -27,9 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const tooltips = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(tooltips, {});
 });
+*/
 
-document.addEventListener('DOMContentLoaded', function() {
-});
+initNav();
 
 const setFavicon = () => {
     const head = document.getElementsByTagName('head')[0];

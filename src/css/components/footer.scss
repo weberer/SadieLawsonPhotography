@@ -1,25 +1,20 @@
-@import "../_slp-colors";
+footer {
+  @extend .primary;
 
- .page-footer {
-   .icon-container {
-     img {
-       height: 1.75rem;
-       width: 1.5rem;
-       padding-bottom: 3px;
-     }
-   }
- }
+  padding-top: 20px;
 
- footer {
-   .page-footer {
-     padding-top: 5px;
-   }
+  .icon-container {
+    img {
+      height: 1.75rem;
+      width: 1.5rem;
+      padding-bottom: 3px;
+    }
+  }
 
-   .footer-copyright {
-      background-color: $primary-color-dark !important;
-   }
+  .footer-copyright {
+    @extend .primary-dark;
+    @extend .white-text;
 
-   .row {
-     margin-bottom: 0;
-   }
- }
+    padding: 10px 0;
+  }
+}

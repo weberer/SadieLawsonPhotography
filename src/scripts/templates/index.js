@@ -1,4 +1,4 @@
-import getHeader from "./components/paralax-header";
+import getHeader from "./components/header";
 import {getPageName, PAGE_IDS} from "../../../resources/data/site-pages";
 import * as sadiePhoto from '../../../resources/photos/meetSadie/sadie.jpg';
 import * as family from '../../../resources/photos/meetSadie/family.jpg';
@@ -6,7 +6,7 @@ import * as family from '../../../resources/photos/meetSadie/family.jpg';
 export default () => `${getHeader(getPageName(PAGE_IDS.INDEX))}
     <div class="container">
         <div id="meet-sadie">
-            <h5 class="center primary-text-dark">Hi I'm Sadie!</h5>
+            <h1>Hi I'm Sadie!</h1>
             <p>
                 <img id="sadie-photo" src="${sadiePhoto.default}" alt="Meet Me">
                 Photography came to me at a time when I needed it most - it was like walking into what I was created to do. 

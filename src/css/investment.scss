@@ -1,7 +1,8 @@
-@import 'materialize.config';
+//@import 'materialize.config';
 @import 'slp-colors';
-@import './components/booking-form';
-@import './components/investment-card';
+@import './materalize/media-queries';
+//@import './components/booking-form';
+//@import './components/investment-card';
 
 .card-content {
   .card-title-row {
@@ -77,7 +78,7 @@
     bottom: unset;
   }
 }
-
+/*
 @import '~materialize-css/sass/components/_variables';
 
 .price-modal {
@@ -93,7 +94,7 @@
     top: 0 !important;
     height: 100%;
   }
-}
+}*/
 
 .modal {
   .modal-header {

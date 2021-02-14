@@ -1,5 +1,5 @@
 import {PAGE_IDS, getPageName} from '../../../resources/data/site-pages';
-import getHeader from './components/paralax-header';
+import getHeader from './components/header';
 import buildTestimonial from "./components/testimonial";
 import testimonials from "../../../resources/data/testimonials";
 

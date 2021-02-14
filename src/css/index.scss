@@ -1,7 +1,17 @@
+@import "./materalize/variables";
+@import './materalize/typography';
+@import "./materalize/global";
+
 #meet-sadie {
   display: inline-block;
   margin-bottom: 5rem;
   font-size: 1.2rem !important;
+
+  h1 {
+    @extend .section-header-font;
+    @extend .primary-text-dark;
+    @extend .center;
+  }
 
   img {
     margin: 10px;

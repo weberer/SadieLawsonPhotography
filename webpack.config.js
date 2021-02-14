@@ -25,7 +25,7 @@ module.exports = {
         investmentTemplate: './src/scripts/templates/investment.js',
         testimonialsTemplate: './src/scripts/templates/testimonials.js',
 
-        headerTemplate: './src/scripts/templates/components/header.js',
+        headerTemplate: './src/scripts/templates/components/nav.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
         messengerTemplate: './src/scripts/templates/components/facebook-messenger.js'
     },
@@ -132,7 +132,7 @@ module.exports = {
         new HtmlWebpackPrerenderPlugin({
             'contact.html': {
                 contactTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             },
@@ -141,19 +141,19 @@ module.exports = {
             },
             'index.html': {
                 indexTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             },
             'investment.html': {
                 investmentTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             },
             'testimonials.html': {
                 testimonialsTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             }

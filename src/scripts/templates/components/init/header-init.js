@@ -1,8 +1,6 @@
 import '../../../../css/components/header.scss';
 
-export default () => {
-    document.addEventListener('DOMContentLoaded', function() {
-        const elements = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(elements, {});
-    });
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const parallax = document.querySelectorAll('.parallax');
+    M.Parallax.init(parallax, {});
+});

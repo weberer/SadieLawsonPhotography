@@ -25,7 +25,7 @@ module.exports = {
 
         weddingsTemplate: './src/scripts/templates/weddings.js',
 
-        headerTemplate: './src/scripts/templates/components/header.js',
+        headerTemplate: './src/scripts/templates/components/nav.js',
         footerTemplate: './src/scripts/templates/components/footer.js',
         messengerTemplate: './src/scripts/templates/components/facebook-messenger.js'
 
@@ -78,7 +78,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
+        /*new HtmlWebpackPlugin({
             template: './src/html/contact.html',
             inject: 'head',
             excludeChunks: ['contactTemplate'],
@@ -91,7 +91,7 @@ module.exports = {
             excludeChunks: ['errorTemplate'],
             chunks: ['main', 'error'],
             filename: 'error.html'
-        }),
+        }),*/
         new HtmlWebpackPlugin({
             template: './src/html/index.html',
             inject: 'head',
@@ -99,7 +99,7 @@ module.exports = {
             chunks: ['main', 'index'],
             filename: 'index.html'
         }),
-        new HtmlWebpackPlugin({
+        /*new HtmlWebpackPlugin({
             template: './src/html/investment.html',
             inject: 'head',
             excludeChunks: ['investmentTemplate'],
@@ -130,41 +130,41 @@ module.exports = {
             inject: 'head',
             chunks: ['main', 'weddings'],
             filename: 'weddings.html'
-        }),
+        }),*/
         new HtmlWebpackPrerenderPlugin({
-            'contact.html': {
+            /*'contact.html': {
                 contactTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             },
             'error.html': {
                 errorTemplate: '#slp-main'
-            },
+            },*/
             'index.html': {
                 indexTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
-            },
+            },/*
             'investment.html': {
                 investmentTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             },
             'testimonials.html': {
                 testimonialsTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
             },
             'weddings.html': {
                 weddingsTemplate: '#slp-main',
-                headerTemplate: '#slp-header',
+                headerTemplate: '#slp-nav',
                 footerTemplate: '#slp-footer',
                 messengerTemplate: '#facebook-messenger'
-            }
+            }*/
         }),
         new CopyPlugin({
             patterns: [

@@ -1,11 +1,29 @@
+@import "./materalize/media-queries";
+@import "./materalize/variables";
+@import './materalize/typography';
+@import "./materalize/global";
+@import "./materalize/buttons";
+@import "./materalize/navbar";
+@import "./materalize/sidenav";
 @import './components/header';
+@import './components/footer';
 @import './scrollbars';
 
 * {
   @include scrollbars(10px, 30px, 5px, $primary-color-dark-2);
-  font-family: $body-font;
+  font-family: $font-stack;
   font-weight: 400;
   font-size: 16px;
+}
+
+#slp-nav {
+  z-index: 1000;
+}
+
+#slp-main {
+  display: flex;
+  flex-direction: column;
+  margin-top: -5px;
 }
 
 body, #root {

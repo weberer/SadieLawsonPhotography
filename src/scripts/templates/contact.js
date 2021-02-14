@@ -1,6 +1,6 @@
 import {PAGE_IDS, getPageName} from '../../../resources/data/site-pages';
 import contactInfo from '../../../resources/data/contact-info';
-import getHeader from './components/paralax-header';
+import getHeader from './components/header';
 import getBookingForm from './components/booking-form';
 
 const _PAGE_SUBTITLE = `<div class="row">
